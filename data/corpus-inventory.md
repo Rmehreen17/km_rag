@@ -2,144 +2,263 @@
 
 ## Project
 
-**Enterprise Knowledge Search**
+Enterprise Knowledge Search
 
-## Purpose
+## Objective
 
-The initial prototype uses a deliberately constrained heterogeneous document corpus to evaluate Retrieval-Augmented Generation (RAG) retrieval, chunking, grounding, and evidence quality.
+Build and evaluate an evidence-first Retrieval-Augmented Generation (RAG)
+search experience across a small heterogeneous enterprise knowledge repository.
 
-The initial corpus targets approximately 190–200 pages across two knowledge domains.
+The initial corpus intentionally contains approximately 200 pages of
+high-value material rather than indexing entire source documents.
 
 ---
 
 # Domain 1 — Company Intelligence
 
-## MSFT-01 — Microsoft Annual Report 2025
+## MSFT-23 — Microsoft Annual Report 2023
 
-* **Source:** Microsoft Investor Relations
-* **Year:** 2025
-* **Document type:** Annual Report
-* **Target:** ~40 pages
-* **Selection:** Business, AI/product strategy, operating segments, MD&A, risk factors, selected financial/segment information
-* **Official source:** Microsoft Investor Relations — 2025 Annual Report
+Source: Microsoft Investor Relations
 
-## MSFT-02 — Microsoft Annual Report 2024
+Year: 2023
 
-* **Source:** Microsoft Investor Relations
-* **Year:** 2024
-* **Document type:** Annual Report
-* **Target:** ~35 pages
-* **Selection:** Business, AI/product strategy, operating segments, MD&A, risk factors, selected financial/segment information
-* **Official source:** Microsoft Investor Relations — 2024 Annual Report
+Document type: Annual Report
 
-## MSFT-03 — Microsoft Annual Report 2023
+Selected content:
+- Business and strategy
+- AI and responsible AI
+- Products and services
+- Operating segments
+- Management's Discussion and Analysis
+- Risk Factors
 
-* **Source:** Microsoft Investor Relations
-* **Year:** 2023
-* **Document type:** Annual Report
-* **Target:** ~25 pages
-* **Selection:** Business, AI/product strategy, operating segments, MD&A, risk factors
-* **Official source:** Microsoft Investor Relations — 2023 Annual Report
+Target: ~30–35 pages
 
-### Domain target
+Purpose:
+Provides historical context for Microsoft's business and AI strategy and
+allows comparison with later annual reports.
 
-Approximately 100 pages.
+---
+
+## MSFT-24 — Microsoft Annual Report 2024
+
+Source: Microsoft Investor Relations
+
+Year: 2024
+
+Document type: Annual Report
+
+Selected content:
+- Business and strategy
+- AI and Microsoft Cloud
+- Products and services
+- Operating segments
+- Management's Discussion and Analysis
+- Risk Factors
+
+Target: ~30–35 pages
+
+Purpose:
+Provides an intermediate point for evaluating how business and AI-related
+themes changed over time.
+
+---
+
+## MSFT-25 — Microsoft Annual Report 2025
+
+Source: Microsoft Investor Relations
+
+Year: 2025
+
+Document type: Annual Report
+
+Selected content:
+- Business and strategy
+- AI and Microsoft Cloud
+- Products and services
+- Operating segments
+- Management's Discussion and Analysis
+- Risk Factors
+- Selected financial information
+
+Target: ~30–35 pages
+
+Purpose:
+Provides the most recent annual-report context in the initial corpus.
+
+---
+
+## Company Intelligence Target
+
+Approximately 90–105 pages.
 
 ---
 
 # Domain 2 — Records & Information Governance
 
-## NARA-01 — Electronic Messaging Compliance Assessment Toolkit
+## NARA-EM-25 — Electronic Messaging Compliance Assessment Toolkit
 
-* **Source:** U.S. National Archives and Records Administration
-* **Year:** 2025
-* **Document type:** Compliance assessment toolkit
-* **Target:** ~20 pages
-* **Topics:** Electronic messaging, stakeholders, risk assessment, compliance, records management
-* **Official source:** NARA
+Source: U.S. National Archives and Records Administration
 
-## NARA-02 — Universal Electronic Records Management Requirements, Version 3
+Year: 2025
 
-* **Source:** U.S. National Archives and Records Administration
-* **Year:** 2023
-* **Document type:** ERM requirements spreadsheet
-* **Target:** ~20–25 pages of relevant material
-* **Topics:** Capture, maintenance and use, disposal, transfer, metadata, reporting
-* **Official source:** NARA
+Document type: Compliance assessment toolkit
 
-## NARA-03 — Success Criteria for Managing Email Records
+Selected content:
+- Electronic messaging
+- Records management
+- Stakeholder responsibilities
+- Technical considerations
+- Security considerations
+- Legal/compliance considerations
+- Assessment questions
 
-* **Source:** U.S. National Archives and Records Administration
-* **Year:** 2016
-* **Document type:** Guidance / evaluation criteria
-* **Target:** ~25 pages
-* **Topics:** Policies, systems, access, disposition
-* **Official source:** NARA
-
-## NARA-04 — Capstone Approach White Paper
-
-* **Source:** U.S. National Archives and Records Administration
-* **Year:** 2014
-* **Document type:** White paper
-* **Target:** ~20–25 pages
-* **Topics:** Capstone approach, email records, appraisal, retention and disposition
-* **Official source:** NARA
-
-### Domain target
-
-Approximately 90–95 pages.
+Target: ~15–18 pages
 
 ---
 
-# Corpus Design Principles
+## NARA-ERM — Universal Electronic Records Management Requirements
 
-Documents should be:
+Source: U.S. National Archives and Records Administration
 
-* Publicly accessible
-* From authoritative sources
-* Relevant to the selected domain
-* Useful for question-answering
-* Diverse enough to create retrieval challenges
-* Suitable for a portfolio demonstration
+Year: 2023
 
-The corpus is intentionally constrained to enable rapid experimentation and manual evaluation.
+Document type: Electronic records management requirements
 
-The goal is not to maximize document volume. The goal is to understand and measure retrieval quality.
+Selected content:
+- Capture
+- Maintenance and use
+- Disposal
+- Transfer
+- Metadata
+- Reporting
+- Must Have requirements
+- Should Have requirements
+
+Target: ~20–25 pages
+
+Note:
+This source is a structured requirements document/spreadsheet and will
+be handled separately from the PDF documents.
 
 ---
 
-# Retrieval Dimensions
+## NARA-EMAIL-16 — Success Criteria for Managing Email Records
 
-The corpus intentionally provides three retrieval dimensions:
+Source: U.S. National Archives and Records Administration
 
-### Domain
+Year: 2016
 
-Company Intelligence vs. Records & Information Governance
+Document type: Guidance / evaluation criteria
 
-### Time
+Selected content:
+- Policies
+- Systems
+- Access
+- Disposition
+- Assessment questions
+- Requirements
 
-Microsoft 2023 → 2024 → 2025
+Target: ~15–20 pages
 
-### Document Type
+---
 
-Annual Report, Guidance, Requirements, White Paper, Spreadsheet
+## NARA-CAP — Capstone Approach and Capstone GRS
 
-These dimensions will be used when designing the evaluation dataset.
+Source: U.S. National Archives and Records Administration
+
+Year: 2014
+
+Document type: White paper / guidance
+
+Selected content:
+- Capstone approach
+- Rationale
+- Role-based disposition
+- Retention
+- Culling
+- Verification
+- Capstone GRS items
+
+Target: ~20–25 pages
+
+---
+
+## Records & Information Governance Target
+
+Approximately 75–90 pages.
+
+---
+
+# Overall Corpus Target
+
+Approximately 180–195 pages.
+
+The project does not require an exact page count.
+
+The corpus is intentionally constrained to allow manual evaluation
+within a 4–5 day project sprint.
+
+---
+
+# Corpus Dimensions
+
+The corpus provides three useful retrieval dimensions:
+
+## 1. Domain
+
+- Company Intelligence
+- Records & Information Governance
+
+## 2. Time
+
+- Microsoft 2023
+- Microsoft 2024
+- Microsoft 2025
+- NARA 2014
+- NARA 2016
+- NARA 2023
+- NARA 2025
+
+## 3. Document Type
+
+- Annual Report
+- Guidance
+- Compliance Toolkit
+- Requirements
+- White Paper
+
+---
+
+# Evaluation Goals
+
+The corpus will be used to evaluate:
+
+1. Chunking strategy
+2. Semantic retrieval
+3. Hybrid retrieval
+4. Retrieval precision
+5. Citation/evidence accuracy
+6. Cross-domain retrieval
+7. Cross-year retrieval
+8. Unanswerable-question behavior
 
 ---
 
 # Data Provenance
 
-Each document will be tracked using:
+Each indexed document will retain:
 
-* Document ID
-* Domain
-* Source organization
-* Document title
-* Publication year
-* Document type
-* Source URL
-* Page/section used
-* Retrieval metadata
+- Document ID
+- Source organization
+- Document title
+- Publication year
+- Document type
+- Domain
+- Source URL
+- Original page number where available
+- Selected section
 
-Source documents will not be redistributed in this repository unless their terms permit redistribution. The repository will provide source information and instructions for obtaining the documents where appropriate.
+Source documents remain the property of their respective publishers.
+The repository will document source information rather than redistribute
+documents where redistribution is not appropriate.

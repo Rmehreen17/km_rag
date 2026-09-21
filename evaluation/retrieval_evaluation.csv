@@ -1,0 +1,91 @@
+experiment_id,golden_question_id,question,method,rank,document,page,chunk_id,score,top1_hit,top5_hit,expected_documents,evidence_required
+EXP01,Q03,How does Microsoft approach responsible AI?,semantic,1,msft-23,5,msft-23-P5-C1,0.5511608624385935,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,semantic,2,msft-25,5,msft-25-P5-C1,0.5397404038904052,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,semantic,3,msft-24,12,msft-24-P12-C1,0.4969566025148821,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,semantic,4,msft-24,11,msft-24-P11-C1,0.46353191531639193,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,semantic,5,msft-23,12,msft-23-P12-C1,0.44875613058284947,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,bm25,1,nara-cap,24,nara-cap-P24-C1,8.941302200996684,False,False,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,bm25,2,nara-cap,8,nara-cap-P8-C1,8.50076034261008,False,False,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,bm25,3,nara-cap,21,nara-cap-P21-C1,8.453899816105467,False,False,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,bm25,4,nara-cap,25,nara-cap-P25-C1,6.733116316476123,False,False,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,bm25,5,nara-cap,15,nara-cap-P15-C1,6.726384723870721,False,False,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,hybrid,1,msft-23,5,msft-23-P5-C1,0.03131881575727918,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,hybrid,2,nara-cap,24,nara-cap-P24-C1,0.01639344262295082,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,hybrid,3,msft-25,5,msft-25-P5-C1,0.016129032258064516,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,hybrid,4,nara-cap,8,nara-cap-P8-C1,0.016129032258064516,True,True,msft-23|msft-24|msft-25,True
+EXP01,Q03,How does Microsoft approach responsible AI?,hybrid,5,msft-24,12,msft-24-P12-C1,0.015873015873015872,True,True,msft-23|msft-24|msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,semantic,1,msft-25,21,msft-25-P21-C1,0.48659112940611615,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,semantic,2,msft-25,5,msft-25-P5-C1,0.4753563200047029,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,semantic,3,msft-24,26,msft-24-P26-C1,0.4612398896056102,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,semantic,4,msft-25,15,msft-25-P15-C2,0.44686999821439677,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,semantic,5,msft-25,21,msft-25-P21-C2,0.4321054310531608,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,bm25,1,msft-25,10,msft-25-P10-C1,13.13186728822974,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,bm25,2,msft-24,11,msft-24-P11-C1,13.089743168181219,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,bm25,3,msft-25,5,msft-25-P5-C1,12.54308265553289,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,bm25,4,msft-24,15,msft-24-P15-C1,9.538147857447415,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,bm25,5,msft-25,10,msft-25-P10-C2,8.85761760006336,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,hybrid,1,msft-25,5,msft-25-P5-C1,0.03200204813108039,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,hybrid,2,msft-24,11,msft-24-P11-C1,0.030834914611005692,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,hybrid,3,msft-25,21,msft-25-P21-C1,0.01639344262295082,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,hybrid,4,msft-25,10,msft-25-P10-C1,0.01639344262295082,True,True,msft-25,True
+EXP02,Q01,What are the three interconnected ambitions driving Microsoft's R&D?,hybrid,5,msft-24,26,msft-24-P26-C1,0.015873015873015872,True,True,msft-25,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,semantic,1,msft-25,11,msft-25-P11-C1,0.6494496429093473,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,semantic,2,msft-25,22,msft-25-P22-C2,0.5699137008718931,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,semantic,3,msft-24,28,msft-24-P28-C1,0.5126210395116748,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,semantic,4,msft-23,23,msft-23-P23-C1,0.5083846487329701,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,semantic,5,msft-24,30,msft-24-P30-C1,0.493796620679245,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,bm25,1,msft-25,10,msft-25-P10-C2,8.258866364352125,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,bm25,2,msft-23,16,msft-23-P16-C1,7.8652417026459815,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,bm25,3,msft-24,15,msft-24-P15-C1,7.653008330487014,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,bm25,4,msft-25,22,msft-25-P22-C2,6.662468251365777,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,bm25,5,msft-24,15,msft-24-P15-C2,6.0941951669697465,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,hybrid,1,msft-25,22,msft-25-P22-C2,0.031754032258064516,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,hybrid,2,msft-24,28,msft-24-P28-C1,0.031024531024531024,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,hybrid,3,msft-25,11,msft-25-P11-C1,0.01639344262295082,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,hybrid,4,msft-25,10,msft-25-P10-C2,0.01639344262295082,True,True,msft-25|msft-24|msft-23,True
+EXP03,Q02,What are Microsoft's three reportable operating segments?,hybrid,5,msft-23,16,msft-23-P16-C1,0.016129032258064516,True,True,msft-25|msft-24|msft-23,True
+EXP04,Q09,What are the success criteria for electronic mail management?,semantic,1,nara-email-16,11,nara-email-16-P11-C1,0.6929504894665581,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,semantic,2,nara-email-16,5,nara-email-16-P5-C1,0.6732976716570482,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,semantic,3,nara-email-16,14,nara-email-16-P14-C1,0.609782522461793,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,semantic,4,nara-email-16,9,nara-email-16-P9-C1,0.5721649628899262,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,semantic,5,nara-email-16,3,nara-email-16-P3-C1,0.5687932860478211,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,bm25,1,nara-email-16,5,nara-email-16-P5-C1,16.4698830005255,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,bm25,2,nara-email-16,4,nara-email-16-P4-C1,16.198438625093363,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,bm25,3,nara-email-16,14,nara-email-16-P14-C1,15.991986688940214,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,bm25,4,nara-email-16,11,nara-email-16-P11-C1,15.15443636951552,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,bm25,5,nara-email-16,9,nara-email-16-P9-C1,14.493386143362404,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,hybrid,1,nara-email-16,5,nara-email-16-P5-C1,0.03252247488101534,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,hybrid,2,nara-email-16,11,nara-email-16-P11-C1,0.032018442622950824,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,hybrid,3,nara-email-16,14,nara-email-16-P14-C1,0.031746031746031744,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,hybrid,4,nara-email-16,4,nara-email-16-P4-C1,0.031054405392392875,True,True,nara-email-16,True
+EXP04,Q09,What are the success criteria for electronic mail management?,hybrid,5,nara-email-16,9,nara-email-16-P9-C1,0.031009615384615385,True,True,nara-email-16,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,semantic,1,msft-25,24,msft-25-P24-C1,0.6704388553096354,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,semantic,2,msft-23,30,msft-23-P30-C2,0.6178739019442208,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,semantic,3,msft-25,26,msft-25-P26-C1,0.6134959011678449,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,semantic,4,msft-23,31,msft-23-P31-C1,0.5992363838588611,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,semantic,5,msft-24,31,msft-24-P31-C1,0.5950915155816667,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,bm25,1,msft-24,27,msft-24-P27-C2,14.952802195058492,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,bm25,2,msft-25,23,msft-25-P23-C1,10.293745955145688,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,bm25,3,msft-25,22,msft-25-P22-C1,9.576115547844939,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,bm25,4,msft-24,27,msft-24-P27-C1,9.492372500383771,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,bm25,5,msft-23,28,msft-23-P28-C1,8.805622306102544,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,hybrid,1,msft-25,23,msft-25-P23-C1,0.03128054740957967,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,hybrid,2,msft-25,24,msft-25-P24-C1,0.030679156908665108,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,hybrid,3,msft-23,31,msft-23-P31-C1,0.03055037313432836,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,hybrid,4,msft-24,31,msft-24-P31-C1,0.030090497737556562,True,True,msft-24|msft-25,True
+EXP05,Q06,How did Microsoft Cloud revenue change from FY2024 to FY2025?,hybrid,5,msft-23,30,msft-23-P30-C1,0.03007688828584351,True,True,msft-24|msft-25,True
+EXP06,Q21,What was Microsoft's FY2026 revenue?,semantic,1,msft-25,24,msft-25-P24-C1,0.6342476499966635,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,semantic,2,msft-24,30,msft-24-P30-C1,0.5663698725959097,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,semantic,3,msft-23,30,msft-23-P30-C2,0.5542602173681772,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,semantic,4,msft-24,31,msft-24-P31-C1,0.5533891474484722,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,semantic,5,msft-25,23,msft-25-P23-C1,0.5488610740084285,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,bm25,1,msft-23,33,msft-23-P33-C2,5.134606925939871,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,bm25,2,msft-25,28,msft-25-P28-C1,4.711329907526347,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,bm25,3,msft-24,34,msft-24-P34-C1,4.675055715366539,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,bm25,4,msft-23,33,msft-23-P33-C1,4.675055715366539,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,bm25,5,nara-cap,10,nara-cap-P10-C1,4.648506738245025,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,hybrid,1,msft-25,24,msft-25-P24-C1,0.01639344262295082,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,hybrid,2,msft-23,33,msft-23-P33-C2,0.01639344262295082,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,hybrid,3,msft-24,30,msft-24-P30-C1,0.016129032258064516,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,hybrid,4,msft-25,28,msft-25-P28-C1,0.016129032258064516,False,False,,False
+EXP06,Q21,What was Microsoft's FY2026 revenue?,hybrid,5,msft-23,30,msft-23-P30-C2,0.015873015873015872,False,False,,False

@@ -1,0 +1,23 @@
+{
+  "semantic": {
+    "answerable_questions": 5,
+    "top1_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "out_of_corpus_question": "EXP06",
+    "out_of_corpus_behavior": "retrieval evaluated separately; final answer should abstain"
+  },
+  "bm25": {
+    "answerable_questions": 5,
+    "top1_hit_rate": 0.8,
+    "top5_hit_rate": 0.8,
+    "out_of_corpus_question": "EXP06",
+    "out_of_corpus_behavior": "retrieval evaluated separately; final answer should abstain"
+  },
+  "hybrid": {
+    "answerable_questions": 5,
+    "top1_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "out_of_corpus_question": "EXP06",
+    "out_of_corpus_behavior": "retrieval evaluated separately; final answer should abstain"
+  }
+}

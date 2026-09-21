@@ -1,0 +1,694 @@
+# NARA-EMAIL-16
+Source file: 2016-email-mgmt-success-criteria.pdf
+Source type: uploaded_pdf
+Page numbering note: Microsoft pages are labeled by the report's printed page number; extracted PDF page = printed page + 1. NARA PDFs use the PDF page number.
+
+===== SOURCE PAGE 2 =====
+Criteria for Managing Email Records
+in Compliance with the Managing
+Government Records Directive
+(M-12-18)
+National Archives and Records Administration
+
+April 6, 2016
+
+===== SOURCE PAGE 3 =====
+Contents
+Foreword .................................................................................................................................. 1
+
+2
+
+2
+
+2
+
+..................... 4
+
+..................... 5
+
+..................... 7
+
+2016 Email Management Success Criteria .............................................................................
+1.   P urpose  .................................................................................................
+2.     Success  Criteria ....................................................................................
+3.   Overview  of  agency  responsibilities  for managing email  records  ....
+4.  Resources  .............................................................................................
+5.  Contacts for  more  information .............................................................
+.....................
+............
+.........
+Appendix A:  Q uestions  to  Discuss on  Email  Management  Success  Criteria ......................  8
+
+Appendix B:  Spreadsheet  of  Requirements for Email  Management  ...................................11
+
+===== SOURCE PAGE 4 =====
+Email Management Success Criteria
+April 2016
+Foreword
+The Office of Management and Budget (OMB) and National Archives and Records
+Administration (NARA) released Memorandum M-12-18, Managing Government
+Records Directive, on August 24, 2012. The Directive outlines targets for agencies to
+meet to develop a 21st-century framework for the management of Government records.
+Directive Goal 1.2 states:
+By December 31, 2016, Federal agencies must manage all email records in an
+electronic format. Email records must be retained in an appropriate electronic
+system that supports records management and litigation requirements (which
+may include preservation-in-place models), including the capability to identify,
+retrieve, and retain the records for as long as they are needed.
+Since issuance of the Directive, NARA has been working with Federal agencies,
+Congress, and other parties to update existing statutory, regulatory and NARA guidance
+requirements for managing email. The enclosed guidance synthesizes the email records
+management requirements from the Federal Records Act, Code of Federal Regulations
+and existing NARA guidance. Agencies should use this guidance internally to evaluate
+their progress towards meeting Directive Goal 1.2. Additionally, NARA expects to rely
+on this guidance to determine how successful Federal agencies are in complying with
+Directive Goal 1.2.
+NARA has defined successful email management as having policies and systems in
+place to ensure that email records can be used, accessed, and have the appropriate
+disposition applied. These success criteria reflect the complex challenges that agencies
+face in managing email. NARA recognizes that agencies may be stronger in some
+aspects of email management than others. Organizational complexity, schedule
+development, budgetary or procurement constraints may affect each agency’s ability to
+meet specific criteria. NARA also recognizes that managing email records effectively,
+and in compliance with the Directive Goal 1.2, does not end on December 31, 2016. For
+many agencies, full implementation of the success criteria for email management is an
+ongoing process that continues beyond this calendar year.
+DAVID S. FERRIERO
+Archivist of the United States
+National Archives and Records Administration
+1
+
+===== SOURCE PAGE 5 =====
+Email Management Success Criteria
+April 2016
+2016 Email Management Success Criteria
+1. Purpose
+The 2012 OMB/NARA Managing Government Records Directive (M-12-18) includes a
+requirement that by December 31, 2016 Federal agencies must manage all email
+records in an electronic format and can no longer use print and file policies to manage
+email records. Accordingly, email records must be retained in an appropriate electronic
+system that supports records management and other agency business needs. In order
+to successfully meet the Directive’s 2016 requirement of managing email electronically,
+each agency must have in place applicable records schedules, agency policies, and IT
+systems to ensure that emails that are Federal records can be accessed, managed, and
+preserved until the appropriate disposition is applied.
+This document and its appendices describe the existing records management
+requirements in statutes, regulations and NARA guidance that apply to email records.
+NARA views use of these success criteria as fundamental to successful electronic
+management of email. The appendices provide additional information on managing
+email records. Appendix A provides questions for agencies to review and answer with
+internal stakeholders. Appendix B provides an analysis of specific email management
+requirements as they relate to portions of the records management lifecycle.
+Agencies should use this document to identify areas of strength and weakness in their
+current program, guide internal discussions with stakeholders, and identify any steps
+required to meet the 2016 email target. NARA will ask agencies questions related to the
+four categories of success criteria in future reporting period. NARA recognizes the
+complexities of email management and encourages agencies to contact us with any
+questions.
+2. Success Criteria
+NARA categorized the records management considerations for email into the following
+groups: policies, systems, access, and disposition. Agencies may have specific email
+management requirements that go beyond the scope of this document related to the
+Freedom of Information Act, Privacy Act, cyber security, security classified information,
+controlled unclassified information, litigation, or other requirements. Agencies that
+create and maintain email records containing classified national security information
+must manage the records in accordance with 32 CFR Subtitle B Chapter XX Part 2001
+and Executive Order 13526.
+National Archives and Records Administration
+2
+
+===== SOURCE PAGE 8 =====
+Email Management Success Criteria
+
+April 2016
+
+In 2013, NARA issued Bulletin 2013-02 describing a new, role-based approach to
+managing email records called Capstone. In September 2014, NARA issued Bulletin
+2014-06, reminding agencies of their responsibilities for managing email. In 2015,
+NARA released a GRS for Capstone email records. Agencies should select the
+approach for managing email records that best supports their business requirements
+and complies with relevant laws, regulations, NARA guidance, and the Directive.
+Agencies must have records management controls built into electronic information
+systems, services, and applications in combination with appropriate policies and
+procedures to ensure that records:
+ maintain their content, context, and structure;
+ can be associated with their creators and agency;
+ accurately represent the transactions, facts, or information they document;
+ are protected against unauthorized alteration, deletion, or use; and
+ can be located, retrieved, presented, and interpreted for business use until the
+NARA-approved retention period is met and disposition can be executed.
+Agencies should continually evaluate and monitor their programs’ management of email
+for compliance with all records management requirements.
+4. Resources
+Circular No. A-130 Revised: Management of Federal Information Resources
+This Circular establishes policy for the management of Federal information resources.
+
+OMB includes procedural and analytic guidelines for implementing specific aspects of
+
+these policies.
+
+Department of Defense (DoD) Standard 5015.02:
+This standard establishes policy and assigns responsibilities for the management of
+
+DoD records in all media, including electronic records. The standard identifies one
+
+approach to meeting functional requirements needed for records management systems.
+
+Executive Order 13526 - Classified National Security Information
+This Order prescribes a uniform system for classifying, safeguarding, and
+declassifying national security information, including information relating to defense
+against transnational terrorism.
+Guidance on Managing Email (OMB M-14-16):
+National Archives and Records Administration
+5
+
+===== SOURCE PAGE 9 =====
+Email Management Success Criteria
+
+April 2016
+
+This Memorandum reminds Federal agencies about their records management
+responsibilities regarding managing and retaining email records.
+
+Managing Government Records Directive (OMB M-12-18):
+This Memorandum marked the beginning of an Executive Branch-wide effort to reform
+
+records management policies and practices and to develop a 21st-century framework
+for the management of Government records.
+
+Public Law 113-187 The Presidential and Federal Records Act Amendments of 2014:
+This Law modernized records management by focusing more directly on electronic
+records, and complemented efforts by NARA and OMB to improve records
+management across the government.
+RFC 5322:
+This document provides the core standard that specifies the structure and syntax that
+must be used for email messages to be sent between computer systems. It also serves
+as the basis for the standards that define how email messages are stored and
+packaged such as PST, MSG, EML, and MBOX.
+NARA Resources:
+Automated Electronic Records Management Report/Plan:
+As required by Item A3.1 of Directive M-12-18, NARA produced a comprehensive plan
+that describes suitable approaches for the automated management of email, social
+media, and other types of electronic record content, including advanced search
+techniques.
+NARA Bulletin 2014-06: Guidance on Managing Email:
+This Bulletin reminds Federal agencies about their records management responsibilities
+regarding managing and retaining email records.
+NARA Bulletin 2014-04: Revised Format Guidance for the Transfer of Permanent
+Electronic Records:
+
+This Bulletin specifies which file formats are acceptable when transferring permanent
+electronic records to NARA. This Bulletin contains an appendix that will be updated to
+
+reflect the continual format changes in how agencies create and use electronic records.
+
+NARA Bulletin 2011-03: Guidance Concerning the use of E-mail Archiving Applications
+to Store E-mail:
+
+This Bulletin provides guidance to Federal agencies on using e-mail archiving
+
+applications and similar technologies for managing e-mail records.
+
+National Archives and Records Administration
+6
+
+===== SOURCE PAGE 10 =====
+Email Management Success Criteria
+April 2016
+Sample Email Management Configuration Requirements:
+This document provides an example of requirements for records capture, classification,
+access, use, administration, and migration of email records.
+The Records Management Services (RMS) Program:
+This website provides information and guidance in support of the E-Government
+Electronic Records Management (ERM) initiative.
+5. Contacts for more information
+If additional information is needed, or if you have questions, please contact your
+agency’s Records Officer, NARA Appraisal Archivist, or records management contact.
+Please refer to the list of NARA contacts for your agency.
+For questions related to the transfer of email records and their accompanying metadata,
+the agency should consult with the National Archives and Records Administration,
+Electronic Records Division, Processing Branch (RDEP), 8601 Adelphi Road, College
+Park, MD 20740, telephone number (301) 837-3420, or by email Etransfers@nara.gov.
+For more information about the Capstone GRS, please see the GRS web page or GRS
+6.1: Email Managed under a Capstone Approach. If you have any questions about the
+GRS, please contact GRS_Team@nara.gov.
+National Archives and Records Administration
+7
+
+===== SOURCE PAGE 11 =====
+Email Management Success Criteria
+
+April 2016
+
+Appendix A: Questions to Discuss on Email Management Success Criteria
+This appendix provides questions to consider related to the four success criteria:
+policies, systems, access, and disposition. Following a description of each criterion ,
+there is a non-exhaustive list of questions your agency should be able to answer.
+Agencies may have specific email management requirements that go beyond the scope
+of this document. These questions are provided for agencies to facilitate discussions
+with stakeholders. With the answers to these questions, agencies can assess their
+progress towards meeting the 2016 target of managing all email in an electronic format.
+NARA will ask agencies questions related to the four categories of success criteria in
+the future reporting periods.
+Policies: Agency-wide policies and training must inform all staff of their responsibilities
+for managing email records. Policies should be developed with all relevant stakeholders
+and should address the requirements of the Federal Records Act, 36 CFR Chapter XII
+Subchapter B, and NARA guidance.
+1.	 Has your agency developed, disseminated, and implemented an approved email
+management policy throughout the agency?
+2.	 Who are the relevant stakeholders involved in the policy creation process in your
+agency (for example CIO, Records Management, IT, and General Counsel)?
+3.	 Does your agency have a NARA-approved disposition schedule in place that
+applies to email that are Federal records?
+4.	 Does your agency have policies and procedures in place to access email in
+response to all information requests?
+5.	 Does your agency have policies and procedures in place to protect against
+unintended loss?
+6.	 Does your agency perform periodic reviews of records management policies with
+all relevant stakeholders?
+7.	 Does your agency perform periodic audits to make sure employees are in
+
+compliance with records management laws, regulations, and policies?
+
+8.	 Does your agency have the policies, technological means, and procedures to
+place legal holds on email records or accounts?
+9.	 Does your agency have policies in place regarding the use of personal or non-
+o
+fficial email accounts?
+10.Hav
+e you trained all account holders on the requirement to copy or forward to
+official accounts Federal records created, received, or transmitted in personal or
+non-official email accounts?
+11.Does your agency comply with the requirements for managing security classified
+information in email accounts and systems?
+National Archives and Records Administration
+8
+
+===== SOURCE PAGE 12 =====
+Email Management Success Criteria
+
+April 2016
+
+Systems: Agencies must have systems in place that can produce, manage, and
+preserve email records in an acceptable electronic format until disposition can be
+executed. Additionally, systems must support the implementation of agency policies and
+provide access to email records throughout their lifecycle.
+1.	 What systems does your agency use to store and manage email messages?
+2.	 Who in your agency has the ultimate responsibility for the systems that manage
+email, how email is accessed, and how disposition is carried out?
+3.	 Does your agency manage email outside of the originating system in a dedicated
+records management system?
+4.	 Does your agency’s email system maintain the content, context, and structure of
+the records?
+5.	 Can your agency associate email records with the creator, their role, and their
+agency?
+6.	 Does your system retain the components of email messages identified in RFC
+5322 including labels that identify each part of the header, the message content,
+and any attachments?
+7.	 Are departing employees’ email records preserved in accordance with NARA-
+approved disposition schedules?
+8.	 If your agency’s email system supports the use of codes or nicknames, or
+identifies addresses only by the name of a distribution list, can you provide the
+intelligent or full names of the sender and addressee(s) with the transfer-level
+documentation?
+9.	 Can email be migrated from one system to another or to an email archiving
+application to ensure consistent access?
+
+10.Does your agency use email systems to transmit classified information?
+
+Access: Email records must remain usable and retrievable throughout their lifecycle.
+Access supports an agency’s ability to carry out its business functions. Access should
+address internal agency needs and accommodate responses to requests for
+information.
+1.	 Can your agency use, retrieve, and interpret email records throughout the entire
+NARA-approved retention period?
+2.	 Is your agency able to access email from current and departed employees?
+3.	 If your agency uses digital signature or encryption technology, is email usable
+and retrievable across the lifecycle?
+4.	 If emails are stored on local or removable media, are they retrieved and
+searched when responding to an information request?
+
+National Archives and Records Administration
+9
+
+===== SOURCE PAGE 13 =====
+Email Management Success Criteria
+April 2016
+5.	 Is your agency able to perform a federated search across multiple email
+
+accounts or multiple systems to find emails needed for agency business?
+
+6.	 Is your agency able to prevent unauthorized access, modification, or destruction
+of email records?
+Disposition: The agency must have a NARA-approved schedule in place to be able to
+carry out the disposition of permanent and temporary email records – using either
+agency-specific schedules or General Records Schedule (GRS) 6.1: Email Managed
+under a Capstone Approach.
+1.	 Does your agency have NARA-approved disposition schedules in place that
+identify the systems where Federal email records are held?
+2.	 Has your agency analyzed existing disposition schedules to determine if they
+apply to email records? Have you identified gaps in the disposition schedules?
+3.	 Has your agency established procedures to associate email records with projects
+or case files?
+4.	 Has your agency developed training to inform employees of their responsibilities
+for managing records in email accounts in accordance with approved disposition
+authorities?
+5.	 Can your agency transfer permanent email records to the National Archives of
+the United States in accordance with approved records schedules and applicable
+laws, regulations, and NARA transfer guidance?
+National Archives and Records Administration
+10
+
+===== SOURCE PAGE 14 =====
+Email Management Success Criteria
+April 2016
+National Archives and Records Administration
+11
+
+Appendix B: Spreadsheet of Requirements for Email Management
+This appendix provides a compilation of records management requirements as they apply to email records. Each
+requirement includes the source statute, regulation, or NARA guidance. The requirements are organized by the
+success criteria and the parts of the records management lifecycle listed below.
+	 Appraisal and Scheduling is the process by which NARA determines the value and final disposition of Federal
+records, designating them either temporary or permanent.
+	 Management and Maintenance is the process for assigning records management responsibilities in each
+program (mission) and administrative area. This process ensures the incorporation of recordkeeping
+requirements into agency programs, processes, systems, and procedures.
+	 Transfer and Execute Disposition is the process for taking action regarding records no longer needed to
+conduct current agency business. This includes implementing the destruction of records or transfer of records
+to NARA in accordance with an established disposition authority.
+Agencies should review these requirements to assess their progress in successfully meeting the Directive
+target of managing email records in an electronic format.
+Criteria Lifecycle
+Category Requirement Reference
+Ensure Federal email records are covered by an approved records schedule. 36 CFR 1225.10
+36 CFR 1220.18
+Policies Appraisal and
+Scheduling
+Work with appraisal archivist to determine if agency records are appropriately scheduled.
+36 CFR 1225.10
+and 1225.12
+44 USC 3303
+
+===== SOURCE PAGE 15 =====
+Email Management Success Criteria
+
+April 2016
+
+Identify and apply appropriate General Records Schedules (Capstone, transitory,
+administrative, grant files, etc.) to email records. If more than one schedule applies,
+ensure copies are made with the required metadata and managed in appropriate systems.
+36 CFR 1227
+GRS
+If using Capstone GRS 6.1, complete and submit NARA Form 1005. The form must be
+approved by NARA before the GRS can be implemented.
+36 CFR 1227
+GRS 6.1 and
+Transmittal 25
+Capstone FAQ,
+Training, and
+White Paper
+Conduct a functional analysis of Federal records held in email systems. 36 CFR 1225.12
+(a)
+Issue disposition authorities through internal directives within six months of approval of
+the records schedule or GRS to ensure proper distribution and application of the
+schedule. The directive must cite the legal authority (GRS or SF 115 and item numbers)
+for each schedule item covering records.
+36 CFR
+1226.12(a)
+Management
+and
+Maintenance
+Set policies that require any record created or received in a non-official account to be
+copied or forwarded to an official account within 20 days. 44 USC 2911
+Evaluate and monitor your records management program for effectiveness and
+compliance with applicable laws and regulations related to email management.
+36 CFR 1220.18,
+see Evaluation
+Ensure policies describe the appropriate methods to identify and destroy temporary
+records that are eligible for disposal, and the application of records holds or legal freezes
+when required.
+36 CFR
+1236.20(b)
+Ensure policies explain how email records are associated with projects or case files as
+appropriate.
+36 CFR 1225.12
+NARA Bulletin
+2013-02
+Develop and implement policies that support the classifying, safeguarding, and
+declassifying of national security information.
+Executive Order
+13526
+32 CFR 2001
+Develop and implement policies and procedures to identify, protect, and manage emails
+which are essential records (formerly known as vital records). 36 CFR 1223
+National Archives and Records Administration
+12
+
+===== SOURCE PAGE 16 =====
+Email Management Success Criteria
+
+April 2016
+
+Transfer and
+Execute
+Disposition
+Ensure policies describe methods to identify and effect the transfer of permanent records
+to the National Archives of the United States. 44 USC 3303
+Develop and implement policies describing the culling/removal of non-record email.
+36 CFR 1222.16
+NARA Bulletin
+2013-02
+Develop procedures to enable the migration of email records, including attachments and
+their associated metadata, to new formats or storage media to avoid loss due to media
+decay or technology obsolescence.
+36 CFR 1236.20
+(a)
+Systems
+Appraisal and
+Scheduling
+Associate email records with applicable record schedules. Utilizing agency business rules,
+systems must assign unique identifiers to records to facilitate management in an
+electronic system and include the ability to remove the record and move it to another
+system
+Records
+Management
+Services (RMS)
+Document
+NARA Bulletin
+2014-04
+36 CFR
+1236.20(b)
+Provide records management staff access to support the appraisal
+records.
+and scheduling of 36 CFR 1225.12
+Management
+and
+Maintenance
+Ensure the content, context, and structure of the record accurately reflects the creator,
+their organization, and relationship to associated metadata.
+36 CFR 1236.10
+NARA Bulletin
+2014-04
+NARA Bulletin
+2015-04
+Capture information with associated attributes in an electronic system. RMS
+Ensure email messages conform to Request for Comments (RFC) 5322.
+Proposed
+regulations 36
+CFR 1236
+NARA Bulletin
+2014-04
+Maintain email records in acceptable formats.
+36 CFR 1235
+36 CFR
+1236.20(b)
+NARA Bulletin
+2014-04
+National Archives and Records Administration
+13
+
+===== SOURCE PAGE 17 =====
+Email Management Success Criteria
+
+April 2016
+
+Establish and incorporate records management controls in information systems. 36 CFR 1236.10
+and 1236.12
+Support the assignment of email records with projects or case files as appropriate. 36 CFR 1225.12
+Prevent the unauthorized access, modification, or deletion of declared records, and
+ensure that appropriate audit trails are in place to track use of the records.
+36 CFR
+1236.20(b)(4)
+Ensure records are authentic and their integrity is protected against unauthorized
+alteration, deletion, or use.
+36 CFR
+1236.10(b)
+and(c)
+Support the classifying, safeguarding, and declassifying of national security information.
+Executive Order
+13526
+32 CFR 2001
+Transfer and
+Execute
+Disposition
+Associate records with the appropriate disposition authorities.
+36 CFR 1236.20
+36 CFR 1225.12
+NARA Bulletin
+2014-04
+Support the assignment of email records with projects or case files as appropriate.
+36 CFR 1225.12
+NARA Bulletin
+2014-04
+Support the export of email records in acceptable file formats.
+36 CFR 1235.50
+NARA Bulletin
+2014-04
+NARA Bulletin
+2013-02
+Support the export of metadata elements included in NARA Bulletin 2015-04.
+36 CFR 1235.50
+NARA Bulletin
+2014-04
+National Archives and Records Administration
+14
+
+===== SOURCE PAGE 18 =====
+Email Management Success Criteria
+
+April 2016
+
+Access
+Appraisal and
+Scheduling
+Email records must be usable and retrievable by appropriate staff to schedule and
+appraise the records.
+36 CFR 1225.12
+36 CFR 1236.20
+Emails that are Federal records must be kept for specific periods of time as mandated in
+records disposition schedules.
+NARA Bulletin
+2014-06
+Management
+and
+Maintenance
+Federal records managed in live email systems must be retrievable to other staff as
+needed.
+36 CFR 1225.12
+36 CFR 1236.20
+Manage email records of current and former employees in a manner that supports
+searching in response to information requests, including FOIA and agency business
+needs.
+36 CFR 1236.20
+5 U.S.C. § 552
+Ensure the ability to search all or selected systems that manage or maintain email records
+(temporary and permanent) across the enterprise for content and/or attributes, in order to
+determine the existence and location of matching records.
+RMS
+Ensure that all records are retrievable and usable for as long as needed to conduct
+agency business and to meet NARA-approved disposition authorities.
+36 CFR
+1236.12(b) and
+1236.20(b)(6)
+Ensure that access to email records minimizes the risk of unauthorized additions,
+deletions, or alterations.
+36 CFR
+1222.34(d)(2)
+If a third party is contracted for storage or management, include provisions for export of
+messages to a new system and permanent records to the National Archives.
+Proposed
+regulations
+1236.12d,
+36 CFR 1236.20
+National Archives and Records Administration
+15
+
+===== SOURCE PAGE 19 =====
+Email Management Success Criteria
+
+April 2016
+
+Transfer and
+Execute
+Disposition
+Email records must be transferred in usable and retrievable formats.
+36 CFR 1235
+NARA Bulletin
+2014-04
+Email records should include delimiters that indicate the beginning and end of each
+message and the beginning and end of each attachment, if any. Each attachment must be
+differentiated from the body of the message, and uniquely identified.
+36 CFR 1235.50
+NARA Bulletin
+2014-04
+Agencies that use an email system that identifies users by codes or nicknames, or
+identifies addressees only by the name of a distribution list should include information with
+the transfer-level documentation to ensure identification of the sender and addressee(s)
+36 CFR 1235.50
+36 CFR 1236.22
+NARA Bulletin
+2014-04
+Email records must include labels to identify each part of the message (Date, To [all
+recipients, including cc: and bcc: copies], From, Subject, Body, and Attachment) including
+transmission and receipt information (Time Sent, Message Size, File Name, and similar
+information, if available).
+NARA Bulletin
+2014-04
+Ensure transfers of email records are described by the metadata elements included in
+NARA Bulletin 2015-04.
+CFR 1235.50
+NARA Bulletin
+2015-04
+Disposition
+Appraisal and
+Scheduling
+Identify and execute the transfer of permanent records to the National Archives of the
+United States based on NARA-approved records schedules.
+44 U.S.C. 3303
+36 CFR
+1236.20(b)(7)
+Identify and destroy temporary records that are eligible for disposal. 36 CFR
+1236.20(b)(7)
+Ensure policies account for essential records held in email accounts.
+36 CFR
+1222.16(a)
+36 CFR 1225.12
+Management
+and
+Maintenance
+Systems that manage email records must support the disposition of those records,
+according to the applicable NARA-approved records schedule.
+36 CFR
+1236.20(b)(7)
+National Archives and Records Administration
+16
+
+===== SOURCE PAGE 20 =====
+Email Management Success Criteria
+
+April 2016
+
+Transfer and
+Execute
+Disposition
+Transfer email records or accounts to NARA in accordance with acceptable file formats. 36 CFR 1235.50
+Transfer all permanent digital or electronic records in digital or electronic form to the
+greatest extent possible. 44 USC 2904(d)
+Ensure transfers of email records consist of an identifiable, organized body of records (not
+necessarily a traditional series).
+36 CFR 1235.50
+NARA Bulletin
+2014-04
+Ensure the appropriate transfer and disposition of national security information.
+Executive Order
+13526
+32 CFR 2001
+Dispose of email records according to their NARA-approved records schedule. 36 CFR 1224.10
+36 CFR 1225.18
+Dispose of emails that do not meet the definition of a record (non-records). 36 CFR 1225.18
+(c)
+Apply records holds or legal freezes when required. 36 CFR
+1236.20(b)
+National Archives and Records Administration
+17

@@ -1,0 +1,1145 @@
+# NARA-CAP
+Source file: capstone-final-white-paper1.pdf
+Source type: uploaded_pdf
+Page numbering note: Microsoft pages are labeled by the report's printed page number; extracted PDF page = printed page + 1. NARA PDFs use the PDF page number.
+
+===== SOURCE PAGE 3 =====
+National Archives and Records Administration
+
+3 The Capstone Approach and Capstone GRS
+EXECUTIVE SUMMARY
+
+This white paper helps explain the process and decisions leading to the development of a General
+Records Schedule (GRS) for Email Managed under a Capstone Approach, as well as providing
+additional contextual information and detail not included in the typical appraisal report. The
+Capstone Approach offers agencies the option of using a more simplified and automated approach
+to managing email that allows for the categorization and scheduling of email based on the work
+and/or position of the email account owner.
+
+The benefits of the Capstone approach are:
+
+ Increasing the amount of email of permanent value transferred to NARA,
+ Reducing the burden on individual end-users within agencies,
+ Reducing reliance on print-and-file practices, and
+ Allowing for systematic destruction of temporary email based on an approved NARA
+disposition authority, reducing the amount of email that has no further value being stored
+by agencies.
+
+===== SOURCE PAGE 4 =====
+National Archives and Records Administration
+
+4 The Capstone Approach and Capstone GRS
+SECTION 1: BACKGROUND Information
+
+The National Archives and Permanent Records
+NARA’s mission1 is to provide public access to Federal Government records in our custody and
+control. Public access to Government records strengthens democracy by allowing Americans to
+claim their rights of citizenship, hold their government accountable, and understand their history
+so they can participate more effectively in their government.
+
+The Archivist of the United States determines which federal records warrant permanent
+preservation and should be transferred to the National Archives for preservation and public
+access. The decision as to which records are permanent is made through the
+scheduling2 and
+appraisal3 process. Agencies cannot destroy Federal records without the approval of the Archivist
+of the United States. The Federal Records Act gives the Archivist the authority to determine the
+retention and disposition of federal records (44 U.S.C Chapters 21, 29, and 33). Authority for the
+transfer of records with archival value into NARA’s legal custody is outlined in 44 U.S.C. Chapters
+21 and 29.
+
+Not all records possess permanent archival value. NARA estimates that less than five percent (5%)
+of records across the Federal Government require permanent retention and should be transferred
+to the legal custody of the National Archives. NARA determines that most federal records have
+temporary value and authorizes agencies to destroy them when they are no longer needed for
+agency business needs, or when legal or public accountability interests have generally expired. A
+temporary determination by NARA, however, still requires agencies to maintain those temporary
+records for an amount of time that allows the agency to fulfill their obligations. All Federal records
+have value and must be kept for some period of time; however, few records have permanent
+value.
+
+Email Management
+Email often meets the definition of a federal record as provided in the Federal Records Act (44
+U.S.C., § 3301), which includes:
+
+“… all traditional forms of records, regardless of physical form or characteristics, including
+information created, manipulated, communicated, or stored in digital or electronic form.“
+
+Management of email, however, has remained a challenge to most, if not all, federal agencies. In
+what is often referred to as “traditional records management,” the email management burden is
+typically placed on each end-user to make a record or nonrecord decision and to determine
+retention and final disposition under existing records schedules based on the content of the
+message, on an email-by-email basis. Further, end users may need to determine whether cross-
+
+1 http://www.archives.gov/about/info/mission.html
+2 http://www.archives.gov/records-mgmt/policy/records-schedule-review-process.html
+3 http://www.archives.gov/records-mgmt/initiatives/appraisal.html
+
+===== SOURCE PAGE 5 =====
+National Archives and Records Administration
+
+5 The Capstone Approach and Capstone GRS
+filing individual emails with other records (such as case files) is required. The end-user must also
+manage nonrecord4 email, including those of a personal nature.
+
+Using a traditional records management method, and often due to the lack of effective and
+affordable electronic records management systems, many agencies adopted a “print-and-file”
+policy. This policy typically instructs users that electronic records – including email – are to be
+printed into hard-copy (paper) for official filing. This paper version becomes the official
+recordkeeping version. This process requires manual intervention by the user, who has to
+determine whether each email is a federal record, and then determine the appropriate disposition
+authority and filing location for each email record.
+
+Until recently, NARA supported this practice even as it encouraged agencies to adopt electronic
+recordkeeping systems, for example through the endorsement of the DoD 5015 standard
+5. The
+increasing designation of electronic records as the record copy, as well as the growing exponential
+volume of email that federal agencies are responsible for managing, made this practice untenable
+as an email strategy. This has led to resource allocation issues: 1) a risk that permanently valuable
+email is not being appropriately captured and transferred to NARA, and 2) a risk that temporary
+email is being destroyed too soon or kept far too long.
+
+In 2007, Congress began holding hearings on email records management by the White House and
+federal agencies. Congress passed legislation requiring email records be managed electronically.
+
+Recently, the press reported several high profile instances of alleged or actual email
+mismanagement, further highlighting the email management challenge; most notably from the
+Internal Revenue Service (IRS)
+6, Centers for Medicare & Medicaid’s Services (CMS)7, and the
+Environmental Protection Agency (EPA).8 These stories further demonstrate the need for a more
+practical method for managing and preserving email in the Federal Government.
+SECTION 2: RECORDS MANAGEMENT GUIDANCE
+
+Over the past decade, NARA has conducted studies, provided email management guidance,
+
+4 Nonrecord materials are those Federally owned informational materials that do not meet the statutory definition of
+records (44 U.S.C. 3301) or that have been excluded from coverage by the definition. Excluded materials are extra
+copies of documents kept only for reference, stocks of publications and processed documents, and library or museum
+materials intended solely for reference or exhibit. Personal files (also called personal papers) are a type of nonrecord
+material and are documentary materials belonging to an individual that are not used to conduct agency business.
+Personal files are excluded from the definition of Federal records and are not owned by the Government.  (36 CFR
+1220.18)
+5 The DoD 5015.02-STD, signed 25 April 2007, defines the basic requirements, based on operational, legislative and
+legal needs, that must be met by records management application (RMA) products acquired by the Department of
+Defense (DoD) and its Components. It defines requirements for RMA's managing classified records and includes
+requirements to support the Freedom of Information Act (FOIA), Privacy Act, and interoperability.
+6 Bump, Philip. “Here’s How the IRS lost emails from key witness Lois Lerner.” The Washington Post, June 16, 2014.
+7 Viebeck, Elise. “ObamaCare office may have lost emails sought in oversight probe .” The Hill, August 7, 2014.
+8 Desjardins, Lisa. “Environmental Protection Agency tells Congress it lost emails too.” CNN, October 3, 2014.
+
+===== SOURCE PAGE 6 =====
+National Archives and Records Administration
+
+6 The Capstone Approach and Capstone GRS
+revised regulations for electronic records management, and explored alternative ways of
+managing email. Policies and guidance released by NARA are available to the public at NARA’s
+Email Management9 webpage and specific tools may be found in NARA’s Records Management
+Toolkit.10
+
+In response to direction from senior NARA management in 2010, NARA formed the Email
+Management 2.0 working group. This group, led by NARA’s Office of the Chief Records Officer,
+developed new guidance that aligns with other major records management initiatives under
+development. It was through this group that the Capstone Approach was researched, developed,
+and promulgated as guidance.
+
+The Presidential Memorandum and Directive
+With the signing of the
+Presidential Memorandum on Managing Government Records11 by
+President Obama on November 28, 2011, and the subsequent issuance of the Managing
+Government Records Directive12 (M-12-18) on August 24, 2012, by the Office of Management and
+Budget (OMB) and NARA, a new emphasis was placed on electronic records management.
+
+Specific to email management, Section 1.2 of M-12-18 states, in part, that “[b]y December 31,
+2016, federal agencies must manage all email records in an electronic format.” This requirement
+essentially does away with the traditional print-and-file policies and requires agencies to
+implement new approaches to manage their email electronically. Some agencies have had success
+with automated products and solutions, such as software that can automatically determine email
+content based on keyword searches and assign disposition accordingly. Although technology for
+fully automated email management is improving, other solutions for email management are
+required in the interim.
+
+NARA Bulletin 2013- 02, The Capstone Approach
+Based on the efforts of the NARA Email Management 2.0 group, and the requirements of the M-
+12-18, NARA released Bulletin 2013-02,
+Guidance on a New Approach to Managing Email
+Records13 on August 29, 2013 (known as the “Capstone Bulletin”). NARA Bulletin 2013-02
+introduced new guidance to assist agencies in meeting the requirements of Section 1.2 of M-12-
+18.
+
+In addition to the requirements of M-12-18, NARA created this guidance to aid agencies in dealing
+with the overwhelming volume of email records and to ensure that NARA receives the
+permanently valuable email of federal agencies. Even though email has been in wide-spread use in
+federal agencies for over two decades, NARA has not received significant amounts of
+
+9 http://www.archives.gov/records-mgmt/email-mgmt.html
+10 All products are available on NARA’s website, http://www.archives.gov/reco rds-mgmt/toolkit/#list
+11 http://www.whitehouse.gov/the-press-office/2011/11/28/presidential-memorandum-managing-government-
+records
+12 http://www.whitehouse.gov/sites/default/files/omb/memoranda/2012/m -12-18.pdf
+13 http://www.archives.gov/records-mgmt/bulletins/2013/2013-02.html
+
+===== SOURCE PAGE 7 =====
+National Archives and Records Administration
+
+7 The Capstone Approach and Capstone GRS
+electronically-managed email through traditional records scheduling policies or traditional records
+management practices.
+
+The Capstone Bulletin established an additional means of managing and scheduling email records
+where final disposition is determined by the role or position of the account user, rather than the
+content of each individual email. This allows email disposition to be carried out in a systematic
+way, where email within accounts designated as permanent (or other individual emails
+categorized as permanent, regardless of account status) are transferred to the legal custody of the
+National Archives, and email within accounts designated as temporary are eligible for eventual
+destruction. This eliminates the email-by-email review by individual end-users within agencies.
+
+The Capstone approach can generally be summarized with the following points:
+
+ Email is managed in an electronic format in compliance with Section 1.2 of M-12-18.
+ Final disposition is based on the role or position of the end-user, not the content of each
+individual email record.
+ Email of senior officials could be scheduled as permanent, eventually being transferred to
+the legal custody of NARA.
+ Email of other federal employees could be scheduled as temporary, with authority for
+eventual destruction.
+ Capstone affords flexibility, allowing agencies to design an approach that fits their
+technology, business needs, and culture.
+ Use of the Capstone approach is not mandatory; agencies may develop other solutions that
+comply with Section 1.2 of M-12-18.
+
+Agencies are encouraged to manage their email records through a Capstone approach. In addition
+to creating an agency policy on email and an implementation plan, a Capstone approach is further
+strengthened by:
+
+ Use of automated solutions to block email from specific domains or email addresses from
+capture (for example, personal email from the accounts of family members account,
+material that is clearly personal in nature and not a federal record),
+ Use of automated solutions to block duplicates (such as email blasts) from capture, and
+ Allowing for manual management; for example, allowing end-users time to apply
+traditional records management before system capture begins (for example, applying other
+disposition authorities, or deleting nonrecord material).
+
+===== SOURCE PAGE 8 =====
+National Archives and Records Administration
+
+8 The Capstone Approach and Capstone GRS
+
+Between September 2013 and February 2014, NARA provided training to federal agencies on the
+Capstone Bulletin and the Capstone approach. This effort led to the creation of other resources to
+assist agencies. These resources are available on NARA’s Email Management webpage.14
+SECTION 3: Disposition Authority for Email Records
+
+The guidance provided in the Capstone Bulletin gives agencies guidance on how to develop a
+Capstone approach that meets their business needs. It does not, however, provide disposition
+authority for email records. NARA disposition authority, as with any other federal records, is
+required when using a Capstone approach.
+
+As highlighted above, prior to the release of the Capstone Bulletin, agencies would rely on a
+multitude of disposition authorities to manage their email. An email related to a personnel matter,
+for example, would be disposed of in accordance with personnel-related authorities. An email
+related to a specific project would be disposed of in accordance with the disposition authority
+related to those project files. One user’s entire body of email would often require use of multiple
+disposition authorities for proper management. Individual end-users were often not equipped
+with the resources (including knowledge of disposition authorities) to properly manage their
+email. This increased the risk of either loss of email through improper disposition or the retention
+of all email for much longer than actually required by current authorities, unnecessarily expends
+agency resources and puts additional disclosure burdens on the agency.
+
+The Capstone Bulletin allows agencies to propose a disposition schedule where email becomes its
+own records series, similar to that of correspondence, with specific disposition instructions for
+entire bodies of email. Email of senior officials, for example, could be approved for permanent
+retention, while email of all other officials could be approved for temporary retention. NARA’s role
+in approving disposition authorities under the Capstone approach would be twofold:  identify
+senior officials’ accounts for permanent retention and determine the appropriate retention for
+temporary email to meet agency business needs and assure rights and accountability.
+
+14 http://www.archives.gov/records-mgmt/email-mgmt.html
+NOTE:  It is important to note that the implementation of a Capstone approach for the
+management of agency email does not negate other recordkeeping responsibilities. As
+outlined in the Capstone Bulletin, agencies may still have a need to cross-file certain
+email with other records, such as case files or subject files. Agencies will remain
+responsible for ensuring that all other records, including program and project files, are
+still scheduled and managed appropriately. NARA will continue to receive other
+permanent record series from federal agencies outside the Capstone approach.
+
+===== SOURCE PAGE 9 =====
+National Archives and Records Administration
+
+9 The Capstone Approach and Capstone GRS
+
+SECTION 4: CAPSTONE GRS DEVELOPMENT
+
+Acknowledging that the majority of federal agencies had an interest in adopting a Capstone
+approach, NARA next turned its focus to the development of a General Records Schedule (GRS) to
+provide disposition authority for email records managed under such an approach.
+
+The goal of the Capstone GRS is to help agencies meet the requirements of M-12-18. This GRS will
+allow them to focus on implementation and the management of their email rather than the
+process of seeking disposition authority from NARA. For NARA, from a government-wide
+perspective, this GRS will support NARA’s oversight responsibilities by reducing subjectivity and
+increasing consistency in the determination of Capstone officials. The Capstone GRS will establish
+a baseline understanding of roles and disposition of email across the government. This will reduce
+the risk of improper implementation.
+
+Development of the Capstone GRS began in May 2013, with the creation of a NARA intra-agency
+working group. The group consisted of individuals who have a stake, or are subject matter experts,
+in NARA processes and government-wide records management policy.
+
+The development team, comprised of senior NARA staff in the Office of General Counsel, the
+Office of the Chief Records Officer, and NARA’s Research Services, drafted the GRS and created a
+supplemental FAQ to provide further guidance to aid in schedule implementation.
+
+Challenges
+One of the challenges in developing the Capstone GRS was creating a definition of “Capstone
+officials”—the definition had to identify those officials whose accounts warrant permanent
+retention; contain recognizable official positions that would allow for maximum application to
+various federal agency organizational structures, and ultimately ensure increased transfers of
+permanently valuable email to NARA.
+
+The efforts to craft this definition resulted in two goals: 1) reduce the possibility of multiple,
+conflicting interpretations within an agency by developing a clear and understandable definition;
+NOTE:  The Capstone GRS provides disposition authority for agencies implementing a
+Capstone approach; it does not provide disposition authority for other email records
+management strategies. Agencies implementing a Capstone approach must adhere to
+the definitions provided in this GRS, including the definition of Capstone officials. If an
+agency cannot adhere to the definitions in the Capstone GRS, they must submit an
+agency-specific schedule.
+
+===== SOURCE PAGE 10 =====
+National Archives and Records Administration
+
+10 The Capstone Approach and Capstone GRS
+and 2) increase consistency by ensuring that the same type or level of accounts were identified for
+permanent retention across the Federal Government.
+
+An additional challenge concerned the appropriate retention length for temporary email. The
+development team had to balance the realities of limited technological resources within federal
+agencies with the need to maintain temporary email long enough to meet agency business and to
+assure rights and government accountability. Ultimately, item 011 was crafted for the majority of
+temporary email within a given agency, with a minimum retention of 7 years. Item 012 was
+developed as an exception to item 011, allowing for earlier disposition for email in accounts that
+fall into a very narrow definition of clearly administrative and/or routine duties.
+
+Targeted Focus Group
+A targeted focus group was held on May 16, 2014, to solicit feedback from eight agencies on a
+draft version of the GRS and FAQ developed by NARA staff. The focus group included records
+management, legal, and information technology officials from several agencies and the discussion
+focused on the clarity and implementation of the product, including feedback on item descriptions
+and retention periods, and resulted in changes to the draft GRS.
+
+The focus group illustrated that:
+
+ There was an interest in NARA developing a GRS for Capstone email records.
+ Agencies wanted a clear and precise definition of Capstone (permanent) officials, with little
+room for subjectivity.
+ Agencies wanted flexibility in managing temporary accounts, especially for email accounts
+of very low-level staff performing administrative duties.
+
+Government -wide Review
+NARA solicited additional comments on the revised GRS and FAQ drafts via government-wide
+review in July and August 2014. NARA received comments from numerous agencies. NARA
+employees also submitted comments during this review period. The number of comments totaled
+nearly 140. The GRS Development Team adjudicated the comments and made substantial changes
+to the GRS and FAQ.
+
+Findings from this review included:
+
+ There was an interest in NARA developing a GRS for Capstone email records.
+ Agencies required further information about implementation of not only the GRS but also
+the Capstone approach in general (which were added to the FAQ).
+ The definition of Capstone officials needed to be as specific as possible. Earlier versions of
+the definition were too subjective to ensure proper implementation.
+ Flexibility for the temporary email retention was necessary.
+ Based on the comments received, NARA should consider a “verification and approval”
+process for those using this GRS.
+
+===== SOURCE PAGE 11 =====
+National Archives and Records Administration
+
+11 The Capstone Approach and Capstone GRS
+Internal Tests
+At several points during development of the Capstone GRS the definition of Capstone officials
+within item 010 (see appendix A) was tested against the organizational structure of several
+selected agencies. The primary goal was to illustrate whether there could be multiple, inconsistent
+interpretations of the definition of Capstone official and therefore identify potential issues and
+risks with these interpretations. Worksheets were created and development team members
+utilized agency organization charts, PLUM book15 entries, and other resources to apply the
+definition against these agencies. A secondary goal was to increase consistency to ensure that the
+same type and/or level of accounts could be identified for all agencies utilizing the Capstone GRS.
+This led to a significant revision of the definition presented in the current draft. The development
+team saw this as a major step in refining the GRS to ensure proper implementation.
+
+While finalizing this definition, members of the development team acknowledged that more email
+will likely be transferred as permanent than would have been under application of traditional
+records management. For example, Capstone may include the email of officials by virtue of their
+role or position, but who otherwise may not have any other permanent records associated with
+that role or position. NARA believes this is an appropriate trade-off to ensure that the
+permanently valuable email is transferred into its legal custody.
+
+Structure  of the Capstone GRS
+The final draft of the Capstone GRS accounts for all the previously mentioned factors in three
+separate items:
+
+Item 010: Provides disposition authority for the email of senior officials (i.e., Capstone officials).
+The item includes a definition of Capstone officials broken down into nine categories and identifies
+those positions that are required for inclusion when an agency is using this GRS. Please refer to the
+draft Capstone GRS (Appendix A) for further description of these categories.
+
+The nine categories were created after considering all comments, and after significant review of
+agency organizational structures. Although the implementation of this GRS may not assure that all
+permanently valuable email is transferred to NARA, or prevent non-permanently valuable email
+from being transferred, the Capstone GRS development team felt confident that this definition
+appropriately identifies permanent Capstone roles and/or positions.
+
+Item 011: Provides disposition authority for the email of all other officials not included in either
+item 010 or 012. This item is intended to be used for the majority of email managed within a given
+agency. It sets a minimum retention of 7 years. The item does, however, authorize a longer
+retention based on agency business needs.
+
+15 Every four years, just after the Presidential election, the United States Government Policy and Supporting Positions,
+commonly known as the PLUM Book, is published, alternately, by the Senate and the House. The PLUM Book is used
+to identify presidentially appointed positions within the Federal Government. http://www.gpo.gov/fdsys/pkg/GPO-
+PLUMBOOK-2012/content-detail.html
+
+===== SOURCE PAGE 12 =====
+National Archives and Records Administration
+
+12 The Capstone Approach and Capstone GRS
+Although some large agencies have expressed concern about the cost of retaining very large
+volumes of temporary email for seven years, NARA believes that a baseline, seven-year retention
+for the preservation of temporary email records is appropriate. This will not only meet agency
+business needs, but also ensure adequate and proper documentation of the policies and
+transactions of the Federal Government. The preservation of these records for this period of time
+should generally provide for the adequate defense of the Federal Government in litigation. This
+presumptive retention period is consistent with most statutes of limitations to pursue matters
+against the United States, which is generally six years. Additionally, this retention period aligns to
+recordkeeping requirements set forth by Congress, such as the seven-year retention for audit-
+related records established in the financial reforms of Sarbanes-Oxley, and with the IRS’s seven-
+year retention period for personal tax records, which is tied to the six-year statute of limitations
+for criminal violations of the tax code (26 U.S.C., § 6531). These examples, along with others, have
+led NARA to conclude that seven years is an appropriate baseline retention period for temporary
+email records.
+
+Item 012: Provides disposition authority for a very small subset of email. NARA developed this
+item based on feedback received during the agency focus group and during government-wide
+review. It acknowledges that there is a group of employees in purely administrative or support
+positions that receive email related to very specific, administrative and/or routine duties.
+Additional guidance is provided in the FAQ to assist agencies in using this item appropriately. It is
+expected that the majority of temporary email accounts within an agency should be disposable
+under item 011, which has a minimum retention of 7 years, rather than under item 012.
+
+The draft also includes instruction and guidance on culling
+16 within the introduction of the GRS
+and further within FAQs 19 - 22. Culling was incorporated into the guidance as a result of both
+internal and external comments, specifically:
+
+• Agencies wanted the flexibility to allow users (or IT administrators) to cull personal and/or
+nonrecord material. Some agencies expressed concern of personal email being released as
+part of the permanent record.
+• NARA custodial units wanted to reduce the amount of duplicate material and nonrecord
+material found in transfers of permanent records.
+
+Culling aligns with the requirements of the Federal Records Act, and is a principle of good records
+management. The Federal Records Act directs that nonrecord material be managed by the agency,
+and purged when no longer needed; NARA’s approval is not required to destroy such materials (
+36
+CFR 1225.18(c)). Culling assists in assuring that clearly nonrecord material is not transferred with
+permanent records.
+
+Although NARA determined that culling is not mandatory due to the technological limitations of
+
+16 Culling, in the context of Capstone implementation, is the act of removing or deleting material prior to disposition.
+This may include deletion of email blasts (such as agency-wide communications), spam, personal email (records
+belonging to an individual and not related to agency business), and/or transitory emai l (records of short term interest
+or that have minimal documentary or evidentiary value).
+
+===== SOURCE PAGE 13 =====
+National Archives and Records Administration
+
+13 The Capstone Approach and Capstone GRS
+some email systems, culling is desirable to the greatest extent practicable. NARA email
+management resources include guidance on the use of automated tools within email applications
+that could, for example, exclude email from specific email addresses and/or specific domains from
+capture. The flexibility within the Capstone approach allows for manual, automated, or a hybrid of
+both manual and automated culling.
+
+Although NARA’s culling expectations will potentially reduce the volume of nonrecord material
+transferred, NARA accepts that some amount of personal, duplicate, and nonrecord material will
+likely be transferred as part of the permanent record. FAQs 20 through 22 further document the
+importance of culling, and NARA’s role in culling after permanent email records have been
+transferred to NARA.
+
+The Capstone GRS FAQ
+To assist in the implementation of the Capstone GRS, NARA developed the Capstone GRS FAQ. The
+final draft of the Capstone GRS FAQ includes 23 questions that further explain additional resources
+available, general implementation, verification requirements, differences between items, transfer
+of permanent accounts, culling, and acceptable formats. The FAQ should be used in conjunction
+with the GRS.
+
+Verification and Approval Process
+To further address implementation challenges, the development team concluded that a
+“verification and approval” process is necessary for those agencies utilizing this GRS. This
+verification and approval process will allow NARA oversight of the identification of positions and
+ensures they are identified consistently across the Federal Government. Several agencies have also
+expressed a desire to have some form of NARA approval of their Capstone officials prior to
+implementing Capstone and the Capstone GRS. A verification and approval process will increase an
+agency’s confidence in implementing Capstone appropriately while ensuring NARA is fulfilling its
+oversight responsibilities.
+
+This verification process will require agencies implementing this GRS to submit a NARA form
+(number pending), Verification for Implementing GRS 6.1, to receive approval prior to
+implementation of any items of this GRS (see Appendix C). The form serves as either a list of
+permanent Capstone officials for implementation of item 010, or a list of positions excluded from
+implementation of items 011 and 012.
+
+The instructions for the verification form define the nine categories of senior officials provided in
+the definition of Capstone (permanent) accounts in item 010. These definitions acknowledge that
+different agencies often use different titles for similar positions and are meant to assist agencies in
+properly identifying those senior officials within their agency that correlate to each category.
+
+The NARA development team is still refining the process of verification and approval. Procedures
+will be released with the formal transmittal of the Capstone GRS.
+
+===== SOURCE PAGE 14 =====
+National Archives and Records Administration
+
+14 The Capstone Approach and Capstone GRS
+Next Steps
+NARA will be publishing the draft GRS in the Federal Register for public comment in April 2015.
+NARA will also hold a public meeting in May 2015 to address any comments or concerns interest
+groups or the public may have regarding the draft GRS. All comments received either through the
+Federal Register publication process, or the public meeting, will be adjudicated. Final GRS
+transmittal is planned for September 2015.
+
+===== SOURCE PAGE 15 =====
+The Capstone Approach and Capstone GRS A-1
+APPENDIX A: THE CAPSTONE GRS
+
+GENERAL RECORDS SCHEDULE 6.1: EMAIL MANAGED UNDER A CAPSTONE APPROACH
+This schedule applies ONLY to Federal agencies that implement a Capstone approach as described in this GRS. When implementing this GRS, agencies
+should consult the FAQs about GRS 6.1, Email Managed under a Capstone Approach. Agencies are reminded that this GRS should not be implemented in
+isolation, and should be supplemented with agency-wide policies and training, as well as incorporated into agency records management implementation
+tools, such as manuals and file plans. Agencies adopting a Capstone approach should also consult other resources available from NARA related to email
+management, specifically the Capstone approach. These resources are available on NARA’s
+email management page and are summarized in the
+introduction to the FAQ.
+
+Agencies must not implement this GRS until approval of
+NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1. Additional information,
+including a link to the form, may be found in FAQ 3 and in the instructions accompanying the form.
+
+GRS Scope
+
+Email can be managed at an account level, at a mailbox level, in personal folder files, or other ways. This GRS applies to all email, regardless of how the
+email messages are managed or what email technology is used. Email, in the context of this GRS, also includes any associated attachments. This GRS may
+apply to records affiliated with other commonly available functions of email programs such as calendars/appointments, tasks, and chat.
+
+Each agency is responsible for determining the scope of implementation when using Capstone, including:
+• The range of implementation in an organization (agency-wide, specific office, etc.);
+• The range of implementation regarding email technology and system platforms;
+• The parameters for inclusion of day forward/active and/or legacy/inactive email; and
+• The extent of inclusion of classified email.
+Brief information on the scope of an agency’s Capstone implementation is also required on the NARA form XXXX (NA-XXXX), Verification for Implementing
+GRS 6.1.
+
+Agencies are also responsible for defining (and documenting through policy) the official recordkeeping version of email to be managed under a Capstone
+approach, especially when email is captured or retained in multiple locations (e.g., an email archive vs. the live system). All other versions of email can be
+considered nonrecord, the retention of which should be addressed in agency email policy.
+DRAFT
+
+===== SOURCE PAGE 16 =====
+The Capstone Approach and Capstone GRS A-2
+
+Agencies are expected to apply documented selection criteria to cull the email of Capstone officials (permanent accounts) to the greatest extent possible
+before transfer to NARA. Culling refers to the removal – or otherwise excluding from capture – of nonrecord, personal, or transitory messages and
+attachments. Culling typically includes the removal of spam, email blasts (such as agency-wide communications), and personal materials (such as emails to
+family members not related to agency business). Culling may be manual, automated, or a hybrid of both.
+
+Applying this GRS
+
+When applying this GRS in part, agencies must ensure that all other email records are covered by another NARA-approved disposition authority. Agencies
+NOT managing any of their email under the Capstone approach are still responsible for managing their email by applying NARA-approved records
+schedules.
+
+If an agency is implementing a Capstone disposition approach different from what is provided in this GRS, the agency must submit a records schedule. For
+example, an agency may want to narrow the list of minimum [the “must”] positions in item 010, use shorter retention lengths for temporary records, or
+extend the time frame for transfer of permanent records.
+
+Agencies have the discretion to designate individual email messages and attachments as short-term or transitory records covered by another GRS or as
+permanent or longer-term temporary records covered by another GRS or an agency records schedule.
+
+Agencies must transfer to NARA the emails of Capstone officials captured during their tenure as a Capstone official. Therefore, email of Capstone officials
+created prior to their designation as a Capstone official (e.g., prior to their promotion/rotation into a Capstone position) should be treated as temporary
+and not transferred to NARA. For guidance on transferring email as a permanent record, see NARA Bulletin 2014-04, Revised Format Guidance for the
+Transfer of Permanent Electronic Records and the relevant sections of
+36 CFR Part 1235.
+
+Item Records Description Disposition Instruction Disposition
+Authority
+010 Email of Capstone Officials.
+Capstone Officials are senior officials designated by account level or by email addresses, whether the addresses
+are based on an individual’s name, title, a group, or a specific program function. Capstone officials include all
+those listed on an approved NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1, and must
+include, when applicable:
+
+1) The head of the agency, such as Secretary, Commissioner, Administrator, Chairman or equivalent;
+2) Principal assistants to the head of the agency (second tier of management), such as Under Secretaries,
+Assistant Secretaries, Assistant Commissioners, and/or their equivalents; this includes officers of the
+Permanent. Cut off at
+the end of the calendar
+year. Transfer to NARA
+when the records are 15
+years old, or after
+declassification review
+(when applicable),
+whichever is later.
+
+DAA-GRS-
+2014-0001,
+item 0001
+
+DRAFT
+
+===== SOURCE PAGE 17 =====
+The Capstone Approach and Capstone GRS A-3
+Armed Forces serving in comparable position(s);
+3) Deputies of all positions in categories 1 and 2, and/or their equivalent(s);
+4) Staff assistants to those in categories 1 and 2, such as special assistants, confidential assistants, military
+assistants, and/or aides;
+5) Principal management positions, such as Chief Operating Officer, Chief Information Officer, Chief
+Knowledge Officer, Chief Technology Officer , and Chief Financial Officer, and/or their equivalent(s);
+6) Directors of significant program offices, and/or their equivalent(s);
+7) Principal regional officials, such as Regional Administrators, and/or their equivalent(s);
+8) Roles or positions that routinely provide advice and oversight to the agency, including those positions
+in categories 1 through 3 and 5 through 7, including, General Counsels, Chiefs of Staff, Inspectors
+General, etc.; and
+9) Roles and positions not represented above and filled by Presidential Appointment with Senate
+Confirmation (PAS positions).
+
+This includes those officials in an acting capacity for any of the above positions longer than 60 days. Agencies
+may also include individual emails from otherwise temporary accounts appropriate for permanent disposition
+in this category.
+
+Additional email addresses may be included, representing roles, positions, and/or programs within the agency
+that predominantly create permanent records related to mission critical functions or policy decisions and/or
+are of historical significance. This may include email of staff in lower level (non-senior) positions, or email
+related to functions in lower-level offices. For example, an agency with mission-centric task forces may include
+the head of each task force within their Capstone officials.
+
+If a Capstone official has more than one agency-administered email account, this item applies to all accounts. If
+a Capstone official has an email account managed by other staff (such as personal assistants, confidential
+assistants, military assistants, or administrative assistants), this item applies to those accounts. This item
+applies to all email regardless of the address names used by the Capstone official for agency business, such as
+nicknames or office title names, and email from personal or non-agency email accounts authorized for use for
+official agency business.
+Please consult NA Form XXXX for more information on which positions are included within each category.
+NOTE: Cabinet level agencies implementing a Capstone approach that includes their components/operatives
+must apply the above definition to each component individually. In these cases, each component/operative is
+
+DRAFT
+
+===== SOURCE PAGE 18 =====
+The Capstone Approach and Capstone GRS A-4
+considered a separate agency in terms of the above definition of Capstone Officials. A component/operative of
+a cabinet level agency can implement a Capstone approach independent of their department but must also
+conform to the entirety of this definition.
+
+NOTE: Smaller agencies, micro-agencies or Commissions implementing a Capstone approach may find that
+some of their Capstone positions fall into several of the categories above and/or that they do not have
+applicable roles or positions for all categories.
+
+Not media neutral; applies to records managed in an electronic format only.
+
+011 Email of Non-Capstone Officials.
+Email of all other officials, staff, and
+contractors not included in item
+010.
+
+Not media neutral; applies to
+records managed in an electronic
+format only.
+
+NOTE: Agencies only using item 011
+and/or item 012 of this GRS may not
+dispose of any email of officials
+listed in the must section of the
+description provided in item 010,
+Email of Capstone Officials, of this
+GRS without authority from NARA in
+the form of another GRS or agency-
+specific schedule. Submission and
+approval of NARA form XXXX (NA-
+XXXX), Verification for Implementing
+GRS 6.1 is still required in these
+instances to document those being
+exempted from Capstone.
+
+All others except those in item 012. Includes positions and email not
+covered by items 010 or 012 of this schedule.
+
+This item will apply to the majority of email accounts / users within an
+agency adopting a Capstone approach.
+
+Item may include transitory email, personal email, and/or email filed
+with other records but not removed from the email repository.
+
+Temporary. Delete
+when 7 years old, but
+longer retention is
+authorized if required
+for business use.
+
+DAA-GRS-
+2014-0001,
+item 0002
+012 Support and/or Administrative Positions. Includes non-supervisory
+positions carrying out routine and/or administrative duties. These
+duties comprise general office or program support activities and
+frequently facilitate the work of Federal agencies and their programs.
+This includes, but is not limited to, roles and positions that: process
+routine transactions; provide customer service; involve mechanical
+crafts, or unskilled, semi-skilled, or skilled manual labor; respond to
+general requests for information; involve routine clerical work; and/or
+primarily receive nonrecord and/or duplicative email.
+
+Item may include transitory email, personal email, and/or email filed
+with other records but not removed from the email repository.
+
+Temporary. Delete
+when 3 years old, but
+longer retention is
+authorized if required
+for business use.
+DAA-GRS-
+2014-0001,
+item 0003
+DRAFT
+
+===== SOURCE PAGE 19 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-1
+APPENDIX B: FAQS ABOUT THE CAPSTONE GRS
+
+Frequently Asked Questions (FAQs) about
+GRS 6.1, Email Managed Under a Capstone Approach
+
+These FAQs are designed to aid in implementation of GRS 6.1 (Capstone GRS). Agencies are
+reminded that this GRS should not be implemented in isolation and should be supplemented with
+agency-wide policies and training, as well as incorporated into agency records management
+implementation tools, such as manuals and file plans (see FAQ 16). Agencies adopting a Capstone
+approach should also consult other resources available from NARA related to email management,
+and specifically the Capstone approach. These resources are available on NARA’s
+Email
+Management Page, and include:
+
+• Links to related, over-arching email and transfer related guidance;
+• Recorded training sessions related to Capstone implementation best practices, determining
+Capstone officials, and incorporating a Capstone approach within agency policies and
+training programs;
+• Recorded Briefings on the basics of Capstone, geared towards specific audiences
+(managers, General Counsel, etc.);
+• Checklists and Recorded Training Sessions on the basics of Capstone; and
+• Information on NARA’s own implementation of a Capstone approach.
+
+GENERAL QUESTIONS
+
+1. What is the purpose of GRS 6.1?
+
+The purpose of this schedule is to:
+
+• Provide disposition authority for agencies who implement a Capstone approach as outlined
+in
+NARA Bulletin 2013-02: Guidance on a New Approach to Managing Email Records
+[Capstone]; and
+• Assist agencies in meeting Goal 1.2 of the Managing Government Records Directive (M-12-
+18), which requires agencies to manage both permanent and temporary email records in
+an accessible electronic format by December 31, 2016.
+
+2. From whom may I request more information about this schedule?
+
+You may contact NARA’s General Records Schedules Team at
+GRS_Team@nara.gov with questions
+about this schedule.
+
+DRAFT
+
+===== SOURCE PAGE 20 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-2
+
+3. How does an agency document that it is using the Capstone GRS?
+
+To ensure proper oversight and accountability, this GRS is not to be implemented until an agency
+receives NARA approval of their list of Capstone officials. This applies when using item 010, and
+acts as an exception list when only using items 011 and/or 012. Approval is obtained by submitting
+NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1. Detailed instruction s are
+provided within the form.
+
+Additionally, NARA’s existing regulations and guidance contain several requirements for the
+proper documentation of an agency’s use of the Capstone GRS and the Capstone approach in
+general. These requirements include, but are not limited to:
+
+• Update of the agency’s records management directive and submission to NARA per
+36 CFR
+1220.34(c);
+• Posting of the agency’s records management directive on the agency’s website per the
+FOIA, 5 USC 552(a)(1)(D)  and Office of Management and Budget’s Open Government
+Directive (December 8, 2009); and
+• Respond to any questions in NARA-issued requests for information consistent with 44 USC
+Chapter 29, including those specific to Capstone use and implementation.
+
+4. May an agency deviate from this GRS?
+
+Yes, agencies may submit a records schedule requesting authority to implement a Capstone
+approach that deviates from this GRS. Agencies choosing to use one or more items on this GRS,
+however, without submitting an agency-specific schedule may not deviate from its parameters and
+must submit
+NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1. Reasons for
+submitting an agency-specific schedule may include, but are not limited to:
+
+• The agency determines that excluding one or more of the officials included in the must
+section of the description provided in item 010, Email of Capstone Officials, is appropriate
+(such as due to the non-substantive nature of their work or that their email is captured
+within that of another Capstone official);
+• The agency determines a need to establish a transfer date shorter than the minimum or
+longer than the maximum in item 010; or
+• The agency wants the authority to dispose of temporary email earlier than permitted by
+the retention periods in items 011 and 012.
+
+Agencies are encouraged to discuss scheduling options with their
+NARA Appraisal Archivist.
+
+DRAFT
+
+===== SOURCE PAGE 21 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-3
+5. What does this GRS mean when using the term “Official”?
+
+In context of this GRS, an “official” includes all Federal agency employees regardless of their
+appointment type. This, therefore, includes part-time employees, student employees, term,
+temporary employees, volunteers, interns, members of the military, and contractors who create
+Federal records.
+
+6. Who are the Capstone officials covered by this GRS?
+
+An agency’s Capstone officials are to be documented and submitted on
+NARA form XXXX (NA-
+XXXX), Verification for Implementing GRS 6.1. This form contains additional instructions to assist
+agencies in identifying their officials.  Capstone (permanent) officials are senior (e.g., those high on
+the organization chart) officials generally responsible for agency and program policy- and mission-
+related actions. Capstone officials will vary agency by agency depending on how the roles at the
+agency are carried out and how the agency is organized. Some agencies will have more Capstone
+officials than others.
+
+Federal agencies utilize a variety of titles for senior officials; Agencies using item 010 of this
+schedule must identify their equivalents for those positions described within each category
+provided in the item’s description (when applicable).
+
+Cabinet level agencies implementing a Capstone approach that includes their
+components/operatives must apply the above definition to each component individually. In these
+cases, each component/operative is considered a separate agency in terms of the above definition
+of Capstone Officials. A component/operative of a cabinet level agency can implement a Capstone
+approach independent of their department but must also conform to the entirety of this
+definition. A general rule of thumb is that every record group (RG) included in the Capstone
+implementation should have its own group of Capstone officials.
+
+Agencies that require additional assistance in identifying their Capstone officials should contact
+their
+NARA Appraisal Archivist.
+
+7. How do agencies determine what other roles and positions should be included as Capstone
+officials?
+
+Agencies may determine that there are additional Capstone roles and positions appropriate for
+inclusion in item 010. As included in the may section of the description provided in item 010, Email
+of Capstone Officials, this should include roles, positions, or programs that predominantly create
+or maintain permanent records related to mission-critical functions, policy decisions, and/or have
+historical significance that are not listed in the must section. These additional Capstone officials
+should be included in the agency’s submission of
+NARA form XXXX (NA-XXXX), Verification for
+Implementing GRS 6.1
+
+DRAFT
+
+===== SOURCE PAGE 22 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-4
+8. Does the GRS apply if Capstone officials have more than one email account or if their email is
+managed by other staff (such as special assistants, confidential assistants, military assistants, or
+administrative assistants)?
+
+Yes. Senior officials often have multiple email accounts, either based on their title (e.g.,
+ArchivistOfTheUnitedStates@nara.gov), or managed by another staff member on their behalf. All
+accounts affiliated with a Capstone official role or position must be designated as permanent. See
+category 4 within item 010.
+
+Additional information may be found in NARA Bulletin 2013-03, Guidance for agency employees
+on the management of Federal records, including email accounts, and the protection of Federal
+records from unauthorized removal.
+
+9. Must agencies maintain a list of Capstone officials and their associated email addresses?
+
+Yes. Agencies should maintain an extended version of the NARA form XXXX (NA-XXXX), Verification
+for Implementing GRS 6.1 that includes this additional information. Doing so will support the
+requirements in 36 CFR 1235.48, which states that proper documentation be included with the
+transfer of permanent electronic records. The list will help with implementing Capstone and with
+facilitating the export and transfer of permanent email. Best practices include managing a list of
+Capstone officials and their associated email addresses as part of agency policy. Such a list should
+be kept up-to-date. See also question 23.
+
+10. What is the difference between items 011 and 012?
+
+Item 011 is intended for all roles that do not fit into the descriptions of either 010 or 012. This item
+is therefore appropriate for non-senior officials who have roles such as overseeing and instructing
+workers on the job; reviewing work in progress; observing and securing worker compliance with
+procedures and methods; planning, revising, and coordinating programs; planning general work
+flow and methods; budgeting and financial oversight; and completing other mission related tasks.
+See also questions 11 and 12. The majority of temporary email accounts should fall into this item.
+
+Item 012 is intended for routine and/or administrative roles within an agency. Depending on an
+agency’s unique organization, functions, and/or business needs, this item may only be appropriate
+for a limited number of roles. Agencies having difficulty determining whether item 012 is
+appropriate should use item 011.
+
+11. Why are supervisory positions excluded from item 012?
+
+Supervisory positions are those that plan, assign, and review work, and evaluate
+performance. Because these positions tend to be involved in business and personnel
+decisions, they are included in item 011 which specifies a minimum retention of 7 years. See
+also questions 10 and 12.
+DRAFT
+
+===== SOURCE PAGE 23 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-5
+
+12. How does an agency determine if temporary email covered by items 011 and 012 should be
+kept longer than the prescribed minimum retention?
+
+Agencies should involve multiple stakeholders, such as their Senior Agency Official for Records
+Management, General Counsel, Chief Information Officer, Records Officer, etc. for guidance in
+determining the appropriate retention for email.
+
+Items 011 and 012 each prescribe a minimum retention period, and the disposition instructions
+support flexible scheduling. This authorizes an agency to make internal decisions on whether or
+not temporary accounts should be kept longer based on business and legal needs. This decision
+should be documented via agency policy and disseminated through agency-wide implementation
+tools and training.
+
+Agencies may determine that using only item 011 with one agency-wide retention for all
+temporary email may better meet their business and legal needs and may also be easier to
+implement. For example, under the parameters of this GRS, an agency may decide that all
+temporary accounts are to be maintained for 7 years, regardless of role or position. Agencies
+choosing to use only item 011 for temporary email also may maintain accounts longer for business
+needs, e.g., 15 years, without additional authority from NARA. See also questions 10, 11, and 18.
+
+13. Why is the minimum retention for item 011 7 years?
+
+NARA believes that a baseline, seven-year retention for the preservation of temporary email
+records is appropriate, not only to meet agency business needs, but also to ensure adequate and
+proper documentation of the policies and transactions of the Federal Government. The
+preservation of these records for this period of time should generally provide for the adequate
+defense of the Government in litigation or the vindication of rights by a plaintiff in the event the
+Government has infringed on such rights. This presumptive retention period is consistent with
+most statute of limitations to pursue matters against the United States, which is generally six
+years, with recordkeeping requirements set forth by Congress, such as the seven-year retention
+for audit related records established in the financial reforms of Sarbanes-Oxley, and with the IRS’s
+seven year retention period for personal tax records, which is tied to the six year statute of
+limitations for criminal violations of the tax code. These examples, along with others, have led
+NARA to conclude that seven years is an appropriate baseline retention period for temporary
+email records.
+
+This Capstone GRS allows agencies to elect a shorter retention using item 012 (3 years) for very
+specific roles and positions. Please refer to FAQ 10 for additional information. Agencies who wish
+to seek a shorter retention must submit an agency-specific schedule.
+
+DRAFT
+
+===== SOURCE PAGE 24 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-6
+QUESTIONS ABOUT IMPLEMENTATION
+
+14. May an agency implement portions of this GRS?
+
+Yes, an agency may use any or all of the items on this GRS. If applying this GRS in part (for
+example, only using item 011), agencies must ensure that all other email records are covered by
+another NARA-approved disposition authority. Agencies that are only using item 011 and/or 012
+are further reminded that they may not dispose of the email of any official listed in the must
+section of the description provided in item 010, Email of Capstone Officials, without authority from
+NARA in the form of another GRS or agency-specific schedule. An agency must still submit for
+approval
+NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1 in order to implement
+the use of either only the permanent item or only the temporary items of this GRS.
+
+This supports those agencies that may want to implement Capstone in phases. Some agencies may
+find it practical to initially limit their overall Capstone approach to permanent email (item 010)
+only and add management of temporary email within their overall Capstone approach later.
+
+As indicated in the “GRS Scope” section of the Capstone GRS introduction, an agency may choose
+to exclude several categories of email from coverage by this GRS. The agency must ensure that any
+such email excluded from Capstone coverage is scheduled by another NARA-approved authority
+before disposition is carried out on the email.  See also question 15.
+
+15. Does the Capstone GRS apply to both retroactive and day-forward email?
+
+Each agency should make the decision, and document such in agency policy, whether
+implementation of Capstone is retroactive (applies to bodies of email created prior to Capstone
+implementation) or day-forward. Some agencies, for example, may have had other email filing
+policies in place prior to Capstone implementation and prefer that Capstone schedules be applied
+from a certain date forward.
+
+16. Does this GRS include calendars, appointments, tasks, chat transcripts and other
+communications?
+
+Although the Capstone approach was designed for the management of email records, some
+agencies may not be able to separate email records from other affiliated records, such as
+calendars, appointments, tasks, and chats. In these cases, the records may be covered by the
+Capstone GRS. In instances where these records are managed separately from the email, agencies
+must have NARA approved disposal authority.
+
+17. How does this GRS affect NARA or agency requirements to file email records with other
+related Federal records?
+Capstone can reduce the burden on individual end-users by encouraging the greater use of
+automated methods for managing email accounts. Agencies are responsible for managing their
+DRAFT
+
+===== SOURCE PAGE 25 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-7
+records in accordance with NARA regulations and  fulfilling the requirements of the Managing
+Government Records Directive. When using the Capstone approach for capturing and managing
+email, agencies are reminded of the following requirement as outlined in NARA Bulletin 2013-02,
+Guidance on a New Approach to Managing Email Records [Capstone], item 5d:
+Consider whether email records and attachments can or should be associated with
+related records under agency guidance.
+As a supplement to the Capstone approach, an agency may want or need to associate
+certain email records that relate to other records, such as case files or project files, with the
+related records. This consideration depends on an agency’s needs and how it chooses to
+implement its Capstone approach. This may be accomplished by:
+1. Using electronic pointers (such as metadata tags) to establish linkages, or
+2. In select cases, filing with associated paper or electronic case or project files.
+
+18. How can this GRS be incorporated into agency implementation tools and policies?
+
+Best practices include the use of internal implementation tools, such as manuals, handbooks,
+and/or file plans, for records management execution. As with any GRS, the items should be
+incorporated into these tools and expanded to include agency-specific information and policies.
+Agencies should also implement policy around their Capstone approach, to incorporate additional
+agency specific email guidance that does not require NARA approval. For example, this could
+include:
+
+• Clearly defining the retention period for temporary email in policy and agency manuals,
+since the GRS authorizes banding;
+• Implementing policy on the use of Government accounts for personal purposes;
+• Defining the Capstone (permanent) accounts/addresses for the agency with more
+specificity than included in item 010, Email of Capstone Officials, (for example, those
+positions and officials specific to your agency);
+• Providing additional policy on how to handle email of officials in an acting position;
+• Providing policy on managing nonrecord email;
+• Including other disposition authorities related to email, including the GRS item for
+transitory records;
+• Providing information on agency policy related to culling and other opportunities to apply
+records management to email; and
+• Implementing procedures for initiating record freezes and litigation holds.
+
+DRAFT
+
+===== SOURCE PAGE 26 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-8
+QUESTIONS ABOUT CULLING
+
+19. What is culling?
+
+Culling, in the context of Capstone implementation, is the act of removing or deleting material
+prior to disposition. This may include deletion of email blasts (such as agency-wide
+communications), spam, personal email (records belonging to an individual and not related to
+agency business), and/or transitory email (records of short term interest or that have minimal
+documentary or evidentiary value). Please refer to
+GRS 23, item 7, for additional information on
+what constitutes a transitory record.
+
+20. Are agencies/users expected to cull Capstone email accounts?
+
+Yes. Since agencies are most familiar with the content of their email records, culling permanent
+accounts is expected to the greatest extent possible. Culling may be manual, automated, or a
+hybrid of both. For temporary email, agencies are free to choose the amount of culling to be
+allowed, based on agency business needs, including size of the email repository, cost of
+maintenance, and risk associated with the possible destruction of records that may be needed for
+agency business, including litigation.
+
+21. What if an agency can’t cull email?
+
+An agency should review its policies and technology to determine and verify its culling capabilities.
+Some technologies may not allow culling as described above. Agencies may still implement
+Capstone for permanent accounts but must understand that this will result in the transfer and
+potential preservation of emails that do not meet the definition of a Federal record. NARA screens
+and, when warranted, withholds access to accessioned records in accordance with the general
+restrictions set out in 36 CFR 1256.40-1256.62.  NARA decides on the access permitted to
+accessioned records containing personal privacy information per 36 CFR 1256.56 without
+consulting the originating agency. As part of NARA’s mission to provide public access to Federal
+Government records in our custody and control, weight is put on disclosure when legally
+permissible.
+
+22. Will NARA cull Capstone email after it’s legally transferred?
+
+Since agencies are most familiar with the content of their email records, they are expected to cull
+nonrecord material to the extent possible before transferring. In accordance with 44 U.S.C. 2108,
+custody of these records becomes the responsibility of the Archivist of the United States at the
+time of transfer of the records. It is agreed that these records will be administered in accordance
+with the provisions of 44 U.S.C. Chapter 21, 36 CFR XII, 36 CFR Part 1256 and such other rules and
+regulations as may be prescribed by the Archivist of the United States (the Archivist). The Archivist
+may destroy, donate, or otherwise dispose of any containers, duplicate copies, unused forms,
+blank stationary, non-archival printed or processes material, or other nonrecord material in any
+DRAFT
+
+===== SOURCE PAGE 27 =====
+National Archives and Records Administration
+
+The Capstone Approach and Capstone GRS B-9
+manner authorized by law or regulation. Without further consent, the Archivist may destroy
+deteriorating or damaged documents after they have been copied in a form that retains all of the
+information in the original document. The Archivist will use the General Records Schedule and any
+applicable records disposition schedule of the transferring agency to dispose of non-archival
+materials contained in any transfer. NARA cannot, however, guarantee any level of culling of
+records legally transferred.
+
+QUESTIONS ABOUT TRANSFER
+
+23. What documentation is required with the transfer of Capstone email?
+
+See
+NARA Bulletin 2014-04, Revised Format Guidance for the Transfer of Permanent Electronic
+Records, for NARA’s requirements for transferring permanent electronic records. In addition, 36
+CFR 1235.48 contains requirements for proper documentation needed for the transfer of
+permanent electronic records. This documentation should be an extension of the agency’s
+approved
+NARA form XXXX (NA-XXXX), Verification for Implementing GRS 6.1, which documents
+approved permanent Capstone roles and positions. Please also see question 9.
+
+Agencies must transfer to NARA the email of Capstone officials captured during their tenure as a
+Capstone official. Therefore, email of Capstone officials created prior to their designation as a
+Capstone official (e.g., prior to their promotion/rotation into a Capstone position) should be
+treated as temporary and not transferred to NARA. The following is an example of documentation,
+in the form of a list, of an agency’s Capstone officials and the time period for capture of their email
+as permanent:
+
+Position Title Email Account/Address Begin Date of
+Capture
+End Date of
+Capture
+Secretary of [Department] Senior.Official@agency.gov January 22, 2013
+Secretary of [Department] Secretary@agency.gov January 22, 2013
+Chief Operating Officer John.Doe@agency.gov January 22, 2013 June 1, 2013
+Chief Operating Officer Jane.Public@agency.gov June 2, 2013
+
+DRAFT

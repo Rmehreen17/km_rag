@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "strategy": "paragraph_based",
+  "target_chunk_size_characters": 3200,
+  "overlap_characters": 400,
+  "page_boundary_preserved": true,
+  "preserve_metadata": [
+    "chunk_id",
+    "document_id",
+    "page"
+  ],
+  "rationale": {
+    "initial_approach": "Character-based chunking was tested first.",
+    "observed_issue": "Fixed character boundaries could cut sentences and semantic units.",
+    "revised_approach": "Paragraph-based chunking was selected as the initial baseline to improve semantic coherence."
+  },
+  "evaluation_note": "Chunk size and overlap strategy will be evaluated against the golden question set."
+}

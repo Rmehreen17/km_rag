@@ -100,6 +100,13 @@ Rank 1 — `msft-25 P22 C2`
 Hybrid retrieval improved the ranking of the answer-bearing passage
 from Rank 2 under semantic retrieval to Rank 1.
 
+**Evidence classification:** Direct evidence.
+
+All three retrieval methods surfaced the answer-bearing passage
+within the top five. Hybrid retrieval ranked the direct evidence
+first, improving its position from Rank 2 under semantic retrieval
+to Rank 1.
+
 ---
 
 ### Q04 — Email management success criteria
@@ -122,6 +129,37 @@ All three retrieval methods successfully identified the same
 answer-bearing passage at Rank 1.
 
 ---
+### Q05 - 
+
+**Evidence classification:** Partial evidence.
+
+The retrieved passages contain Microsoft Cloud definitions, revenue
+drivers, segment-level cloud revenue information, and overall company
+revenue comparisons. However, the available retrieved evidence does
+not provide a single Microsoft Cloud total revenue figure for both
+FY2024 and FY2025.
+
+This means the question requires either evidence synthesis from
+additional chunks or refinement of the expected answer.
+
+The result is therefore classified as partial retrieval rather than
+a retrieval failure.
+
+-----------
+
+### Q06 -
+
+**Evidence classification:** Insufficient evidence.
+
+The corpus contains FY2025 and FY2024 financial information, but no
+FY2026 revenue figure. Semantic and hybrid retrieval return related
+FY2025 evidence rather than the requested FY2026 information.
+
+This demonstrates why retrieval similarity alone cannot establish
+answerability. The final RAG system should abstain rather than infer
+FY2026 revenue from prior-year information.
+
+--------
 
 ## Initial Findings
 

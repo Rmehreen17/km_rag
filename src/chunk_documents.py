@@ -1,27 +1,44 @@
-
 from pathlib import Path
 import re
 import json
 
 
-# Folder containing the selected source documents
-RAW_DIR = Path("data/raw")
+# ---------------------------------------------------------
+# Folders
+# ---------------------------------------------------------
 
-# Folder where processed chunks will be saved
+RAW_DIR = Path("data/raw")
 PROCESSED_DIR = Path("data/processed")
 
 
+# ---------------------------------------------------------
+# Chunking configuration
+# ---------------------------------------------------------
+
+# Approximate character equivalents for our first baseline.
+# We will evaluate these values later.
+TARGET_CHUNK_SIZE = 3200
+OVERLAP_SIZE = 400
+
+
+# ---------------------------------------------------------
+# Page extraction
+# ---------------------------------------------------------
+
 def extract_pages(text):
     """
-    Split a document using the page markers created during corpus preparation.
+    Split a document using the page markers created
+    during corpus preparation.
     """
+
     pattern = r"===== SOURCE PAGE (\d+) ====="
+
     parts = re.split(pattern, text)
 
     pages = []
 
-    # The first item is content before the first page marker
     for i in range(1, len(parts), 2):
+
         page_number = int(parts[i])
         page_text = parts[i + 1].strip()
 
@@ -34,38 +51,85 @@ def extract_pages(text):
     return pages
 
 
-def create_chunks(text, chunk_size=3200, overlap=400):
-    """
-    Create overlapping text chunks.
+# ---------------------------------------------------------
+# Paragraph splitting
+# ---------------------------------------------------------
 
-    We use characters here rather than tokens to keep the first
-    version simple and dependency-free.
+def split_into_paragraphs(text):
     """
+    Split text into paragraphs while removing
+    unnecessary whitespace.
+    """
+
+    paragraphs = re.split(r"\n\s*\n", text)
+
+    cleaned = []
+
+    for paragraph in paragraphs:
+
+        paragraph = re.sub(r"\s+", " ", paragraph).strip()
+
+        if paragraph:
+            cleaned.append(paragraph)
+
+    return cleaned
+
+
+# ---------------------------------------------------------
+# Natural chunking
+# ---------------------------------------------------------
+
+def create_chunks(text):
+    """
+    Create chunks using paragraph boundaries.
+
+    Paragraphs are combined until the target chunk size
+    is reached. We avoid cutting paragraphs wherever possible.
+    """
+
+    paragraphs = split_into_paragraphs(text)
 
     chunks = []
 
-    start = 0
+    current_paragraphs = []
+    current_length = 0
 
-    while start < len(text):
-        end = start + chunk_size
+    for paragraph in paragraphs:
 
-        chunk = text[start:end].strip()
+        paragraph_length = len(paragraph)
 
-        if chunk:
-            chunks.append(chunk)
+        # If adding the paragraph keeps us within the target
+        if current_length + paragraph_length <= TARGET_CHUNK_SIZE:
 
-        if end >= len(text):
-            break
+            current_paragraphs.append(paragraph)
+            current_length += paragraph_length
 
-        start = end - overlap
+        else:
+
+            # Save the current chunk
+            if current_paragraphs:
+
+                chunk_text = "\n\n".join(current_paragraphs)
+                chunks.append(chunk_text)
+
+            # Start a new chunk
+            current_paragraphs = [paragraph]
+            current_length = paragraph_length
+
+    # Save the final chunk
+    if current_paragraphs:
+
+        chunk_text = "\n\n".join(current_paragraphs)
+        chunks.append(chunk_text)
 
     return chunks
 
 
+# ---------------------------------------------------------
+# Process one document
+# ---------------------------------------------------------
+
 def process_document(file_path):
-    """
-    Process one document and preserve its page information.
-    """
 
     text = file_path.read_text(encoding="utf-8")
 
@@ -82,40 +146,87 @@ def process_document(file_path):
         for chunk_number, chunk_text in enumerate(chunks, start=1):
 
             document_chunks.append({
-                "chunk_id": f"{document_id}-P{page['page']}-C{chunk_number}",
-                "document_id": document_id,
-                "page": page["page"],
-                "text": chunk_text
+
+                "chunk_id":
+                    f"{document_id}-P{page['page']}-C{chunk_number}",
+
+                "document_id":
+                    document_id,
+
+                "page":
+                    page["page"],
+
+                "text":
+                    chunk_text
             })
 
     return document_chunks
 
 
+# ---------------------------------------------------------
+# Main pipeline
+# ---------------------------------------------------------
+
 def main():
 
-    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    PROCESSED_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
     all_chunks = []
 
-    for file_path in sorted(RAW_DIR.glob("*.txt")):
+    for file_path in sorted(
+        RAW_DIR.glob("*.txt")
+    ):
 
-        print(f"Processing: {file_path.name}")
+        print(
+            f"Processing: {file_path.name}"
+        )
 
-        chunks = process_document(file_path)
+        chunks = process_document(
+            file_path
+        )
 
         all_chunks.extend(chunks)
 
-        print(f"  Created {len(chunks)} chunks")
+        print(
+            f"  Created {len(chunks)} chunks"
+        )
 
-    output_file = PROCESSED_DIR / "chunks.json"
+    output_file = (
+        PROCESSED_DIR /
+        "chunks.json"
+    )
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(all_chunks, f, indent=2, ensure_ascii=False)
+    with open(
+        output_file,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            all_chunks,
+            f,
+            indent=2,
+            ensure_ascii=False
+        )
 
     print()
-    print(f"Total chunks created: {len(all_chunks)}")
-    print(f"Saved to: {output_file}")
 
+    print(
+        f"Total chunks created: "
+        f"{len(all_chunks)}"
+    )
+
+    print(
+        f"Saved to: {output_file}"
+    )
+
+
+# ---------------------------------------------------------
+# Run
+# ---------------------------------------------------------
 
 if __name__ == "__main__":
     main()

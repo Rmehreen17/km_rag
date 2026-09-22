@@ -49,3 +49,5 @@ Show in UI       Abstain
 | Abstention           | Explicit response when evidence is insufficient         |
 | UI                   | Streamlit                                               |
 
+
+![Enterprise Knowledge Search Architecture]](enterprise_knowledge_search_architecture.png)

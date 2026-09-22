@@ -32,11 +32,27 @@ if query:
     st.subheader("Answer")
     st.write(result["answer"])
 
-    st.subheader("Sources & Evidence")
+    st.divider()
 
-    for i, source in enumerate(result["retrieved_evidence"], start=1):
+    if result["abstained"]:
 
-        with st.expander(
-            f"{i}. {source['document']} · Page {source['page']} · {source['chunk_id']}"
+        st.subheader("Evidence")
+        st.info(
+            "No supporting evidence was found in the provided corpus."
+        )
+
+    else:
+
+        st.subheader("Sources & Evidence")
+
+        for i, source in enumerate(
+            result["retrieved_evidence"],
+            start=1
         ):
-            st.write(source["text"])
+
+            with st.expander(
+                f"{i}. {source['document']} · "
+                f"Page {source['page']} · "
+                f"{source['chunk_id']}"
+            ):
+                st.write(source["text"])

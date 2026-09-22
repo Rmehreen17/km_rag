@@ -112,10 +112,16 @@ class RAGPipeline:
             context
         )
 
+        abstained = (
+            "I don't have enough evidence in the provided corpus to answer this."
+            in answer
+        )
+
         return {
             "question": question,
             "answer": answer,
-            "retrieved_evidence": results
+            "retrieved_evidence": results,
+            "abstained": abstained
         }
 
 

@@ -49,4 +49,4 @@ Show in UI       Abstain
 | UI                   | Streamlit                                               |
 
 
-![Enterprise Knowledge Search Architecture]](enterprise_knowledge_search_architecture.png)
+![Enterprise Knowledge Search Architecture](enterprise_knowledge_search_architecture.png)

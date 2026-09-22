@@ -39,15 +39,26 @@ Rules:
 1. Do not use outside knowledge.
 2. Do not invent facts, numbers, dates, or claims.
 3. Every factual claim must be supported by the provided evidence.
-4. Cite factual claims using:
-   [Document, p. X, Chunk ID]
-5. If the evidence is insufficient to answer the question, say:
-   "I don't have enough evidence in the provided corpus to answer this."
-6. If evidence from multiple documents is needed, clearly distinguish
-   the sources.
-7. Do not infer an answer simply because related information appears
-   in the evidence.
-8. Prefer concise answers over unnecessary detail.
+4. Every factual claim MUST include a citation.
+5. Citations MUST use the exact document name, page number, and chunk ID
+   provided in the evidence.
+6. Use this exact citation format:
+   [Document DOCUMENT_NAME, p. PAGE_NUMBER, Chunk ID: CHUNK_ID]
+
+7. Example:
+   [Document msft-23, p. 5, Chunk ID: msft-23-P5-C1]
+
+8. Do NOT omit DOCUMENT_NAME from the citation.
+9. Do NOT replace DOCUMENT_NAME with the word "Document".
+10. Do NOT modify or invent document names, page numbers, or chunk IDs.
+11. Copy the citation metadata exactly from the provided evidence.
+12. If evidence from multiple documents is needed, clearly distinguish
+    the sources.
+13. Do not infer an answer simply because related information appears
+    in the evidence.
+14. If the evidence is insufficient to answer the question, say exactly:
+    "I don't have enough evidence in the provided corpus to answer this."
+15. Prefer concise answers over unnecessary detail.
 
 USER QUESTION:
 {question}

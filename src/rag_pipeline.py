@@ -1,4 +1,3 @@
-
 import json
 import numpy as np
 
@@ -17,23 +16,16 @@ EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 class RAGPipeline:
 
     def __init__(self):
-
-        # Load chunks
         with open(EMBEDDED_FILE, "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
 
-        # Load embeddings
         self.embeddings = np.array([
             chunk["embedding"]
             for chunk in self.chunks
         ])
 
-        # Load embedding model
-        self.model = SentenceTransformer(
-            EMBEDDING_MODEL
-        )
+        self.model = SentenceTransformer(EMBEDDING_MODEL)
 
-        # Build BM25 index
         tokenized_chunks = [
             chunk["text"].lower().split()
             for chunk in self.chunks
@@ -41,69 +33,7 @@ class RAGPipeline:
 
         self.bm25 = BM25Okapi(tokenized_chunks)
 
-    def semantic_search(self, query, top_k=5):
-
-        query_embedding = self.model.encode(
-            [query],
-            normalize_embeddings=True
-        )
-
-        scores = cosine_similarity(
-            query_embedding,
-            self.embeddings
-        )[0]
-
-        indices = scores.argsort()[-top_k:][::-1]
-
-        results = []
-
-        for rank, index in enumerate(indices, start=1):
-
-            chunk = self.chunks[index]
-
-            results.append({
-                "rank": rank,
-                "document": chunk["document_id"],
-                "page": chunk["page"],
-                "chunk_id": chunk["chunk_id"],
-                "score": float(scores[index])
-            })
-
-        return results
-
-    def bm25_search(self, query, top_k=5):
-
-        query_tokens = query.lower().split()
-
-        scores = self.bm25.get_scores(
-            query_tokens
-        )
-
-        indices = scores.argsort()[-top_k:][::-1]
-
-        results = []
-
-        for rank, index in enumerate(indices, start=1):
-
-            chunk = self.chunks[index]
-
-            results.append({
-                "rank": rank,
-                "document": chunk["document_id"],
-                "page": chunk["page"],
-                "chunk_id": chunk["chunk_id"],
-                "score": float(scores[index])
-            })
-
-        return results
-
-    def hybrid_search(
-        self,
-        query,
-        top_k=5,
-        candidate_k=10,
-        rrf_k=60
-    ):
+    def hybrid_search(self, query, top_k=5, candidate_k=10, rrf_k=60):
 
         query_embedding = self.model.encode(
             [query],
@@ -116,38 +46,26 @@ class RAGPipeline:
         )[0]
 
         semantic_indices = (
-            semantic_scores
-            .argsort()[-candidate_k:][::-1]
+            semantic_scores.argsort()[-candidate_k:][::-1]
         )
 
         query_tokens = query.lower().split()
 
-        bm25_scores = self.bm25.get_scores(
-            query_tokens
-        )
+        bm25_scores = self.bm25.get_scores(query_tokens)
 
         bm25_indices = (
-            bm25_scores
-            .argsort()[-candidate_k:][::-1]
+            bm25_scores.argsort()[-candidate_k:][::-1]
         )
 
         fused_scores = {}
 
-        for rank, index in enumerate(
-            semantic_indices,
-            start=1
-        ):
-
+        for rank, index in enumerate(semantic_indices, start=1):
             fused_scores[index] = (
                 fused_scores.get(index, 0)
                 + 1 / (rrf_k + rank)
             )
 
-        for rank, index in enumerate(
-            bm25_indices,
-            start=1
-        ):
-
+        for rank, index in enumerate(bm25_indices, start=1):
             fused_scores[index] = (
                 fused_scores.get(index, 0)
                 + 1 / (rrf_k + rank)
@@ -161,10 +79,7 @@ class RAGPipeline:
 
         results = []
 
-        for rank, index in enumerate(
-            hybrid_indices,
-            start=1
-        ):
+        for rank, index in enumerate(hybrid_indices, start=1):
 
             chunk = self.chunks[index]
 
@@ -173,27 +88,25 @@ class RAGPipeline:
                 "document": chunk["document_id"],
                 "page": chunk["page"],
                 "chunk_id": chunk["chunk_id"],
-                "score": float(fused_scores[index])
+                "score": float(fused_scores[index]),
+                "text": chunk["text"]
             })
 
         return results
 
     def ask(self, question, top_k=5):
 
-        # Step 1: retrieve
         results = self.hybrid_search(
             question,
             top_k=top_k
         )
 
-        # Step 2: build evidence context
         context = build_context(
             results,
             self.chunks,
             max_chunks=top_k
         )
 
-        # Step 3: generate grounded answer
         answer = generate_grounded_answer(
             question,
             context
@@ -214,22 +127,9 @@ if __name__ == "__main__":
 
     result = pipeline.ask(question)
 
-    print("=" * 70)
-    print("QUESTION")
-    print("=" * 70)
-    print(result["question"])
-
-    print("\n" + "=" * 70)
-    print("ANSWER")
-    print("=" * 70)
     print(result["answer"])
 
-    print("\n" + "=" * 70)
-    print("RETRIEVED EVIDENCE")
-    print("=" * 70)
-
     for item in result["retrieved_evidence"]:
-
         print(
             f"Rank {item['rank']} | "
             f"{item['document']} | "

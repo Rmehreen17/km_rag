@@ -1,0 +1,31 @@
+question_id,question,rank,similarity,document,page,chunk_id
+Q01,How does Microsoft approach responsible AI?,1,0.5512,msft-23,5,msft-23-P5-C1
+Q01,How does Microsoft approach responsible AI?,2,0.5397,msft-25,5,msft-25-P5-C1
+Q01,How does Microsoft approach responsible AI?,3,0.497,msft-24,12,msft-24-P12-C1
+Q01,How does Microsoft approach responsible AI?,4,0.4635,msft-24,11,msft-24-P11-C1
+Q01,How does Microsoft approach responsible AI?,5,0.4488,msft-23,12,msft-23-P12-C1
+Q02,What are the three interconnected ambitions that drive Microsoft's research and development efforts?,1,0.552,msft-25,5,msft-25-P5-C1
+Q02,What are the three interconnected ambitions that drive Microsoft's research and development efforts?,2,0.4779,msft-24,11,msft-24-P11-C1
+Q02,What are the three interconnected ambitions that drive Microsoft's research and development efforts?,3,0.4677,msft-23,13,msft-23-P13-C1
+Q02,What are the three interconnected ambitions that drive Microsoft's research and development efforts?,4,0.4586,msft-25,21,msft-25-P21-C1
+Q02,What are the three interconnected ambitions that drive Microsoft's research and development efforts?,5,0.4444,msft-23,12,msft-23-P12-C1
+Q03,What are Microsoft's three reportable operating segments?,1,0.6494,msft-25,11,msft-25-P11-C1
+Q03,What are Microsoft's three reportable operating segments?,2,0.5699,msft-25,22,msft-25-P22-C2
+Q03,What are Microsoft's three reportable operating segments?,3,0.5126,msft-24,28,msft-24-P28-C1
+Q03,What are Microsoft's three reportable operating segments?,4,0.5084,msft-23,23,msft-23-P23-C1
+Q03,What are Microsoft's three reportable operating segments?,5,0.4938,msft-24,30,msft-24-P30-C1
+Q04,What are the four success criteria categories for managing email records?,1,0.7466,nara-email-16,11,nara-email-16-P11-C1
+Q04,What are the four success criteria categories for managing email records?,2,0.7301,nara-email-16,5,nara-email-16-P5-C1
+Q04,What are the four success criteria categories for managing email records?,3,0.689,nara-email-16,14,nara-email-16-P14-C1
+Q04,What are the four success criteria categories for managing email records?,4,0.6364,nara-email-16,12,nara-email-16-P12-C1
+Q04,What are the four success criteria categories for managing email records?,5,0.6336,nara-email-16,4,nara-email-16-P4-C1
+Q05,How did Microsoft Cloud revenue change from FY2024 to FY2025?,1,0.6704,msft-25,24,msft-25-P24-C1
+Q05,How did Microsoft Cloud revenue change from FY2024 to FY2025?,2,0.6179,msft-23,30,msft-23-P30-C2
+Q05,How did Microsoft Cloud revenue change from FY2024 to FY2025?,3,0.6135,msft-25,26,msft-25-P26-C1
+Q05,How did Microsoft Cloud revenue change from FY2024 to FY2025?,4,0.5992,msft-23,31,msft-23-P31-C1
+Q05,How did Microsoft Cloud revenue change from FY2024 to FY2025?,5,0.5951,msft-24,31,msft-24-P31-C1
+Q06,What was Microsoft's FY2026 revenue?,1,0.6342,msft-25,24,msft-25-P24-C1
+Q06,What was Microsoft's FY2026 revenue?,2,0.5664,msft-24,30,msft-24-P30-C1
+Q06,What was Microsoft's FY2026 revenue?,3,0.5543,msft-23,30,msft-23-P30-C2
+Q06,What was Microsoft's FY2026 revenue?,4,0.5534,msft-24,31,msft-24-P31-C1
+Q06,What was Microsoft's FY2026 revenue?,5,0.5489,msft-25,23,msft-25-P23-C1

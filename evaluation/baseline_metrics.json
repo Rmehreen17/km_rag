@@ -1,0 +1,7 @@
+{
+  "retrieval_method": "semantic_vector",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "questions_evaluated": 4,
+  "top_1_hit_rate": 0.5,
+  "top_5_hit_rate": 1.0
+}

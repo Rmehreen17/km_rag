@@ -2,7 +2,6 @@
 
 EKS follows an evidence-first RAG pipeline:
 
-```text
 Enterprise Documents
         ↓
 Document Processing

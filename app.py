@@ -1,3 +1,4 @@
+
 import streamlit as st
 from src.rag_pipeline import RAGPipeline
 
@@ -43,10 +44,10 @@ if query:
 
     else:
 
-        st.subheader("Sources & Evidence")
+        st.subheader("Supporting Evidence")
 
         for i, source in enumerate(
-            result["retrieved_evidence"],
+            result["supporting_evidence"],
             start=1
         ):
 

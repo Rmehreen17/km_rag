@@ -1,4 +1,6 @@
+
 import json
+import re
 import numpy as np
 
 from sentence_transformers import SentenceTransformer
@@ -94,6 +96,38 @@ class RAGPipeline:
 
         return results
 
+    def extract_supporting_evidence(self, answer, retrieved_results):
+
+        citation_pattern = re.compile(
+            r"\[Document\s+([^,\]]+),\s*p\.\s*(\d+),\s*Chunk ID:\s*([^\]]+)\]"
+        )
+
+        cited_sources = citation_pattern.findall(answer)
+
+        cited_keys = {
+            (
+                document.strip(),
+                int(page),
+                chunk_id.strip()
+            )
+            for document, page, chunk_id in cited_sources
+        }
+
+        supporting_evidence = []
+
+        for result in retrieved_results:
+
+            result_key = (
+                result["document"],
+                int(result["page"]),
+                result["chunk_id"]
+            )
+
+            if result_key in cited_keys:
+                supporting_evidence.append(result)
+
+        return supporting_evidence
+
     def ask(self, question, top_k=5):
 
         results = self.hybrid_search(
@@ -117,10 +151,19 @@ class RAGPipeline:
             in answer
         )
 
+        supporting_evidence = []
+
+        if not abstained:
+            supporting_evidence = self.extract_supporting_evidence(
+                answer,
+                results
+            )
+
         return {
             "question": question,
             "answer": answer,
             "retrieved_evidence": results,
+            "supporting_evidence": supporting_evidence,
             "abstained": abstained
         }
 
@@ -135,7 +178,9 @@ if __name__ == "__main__":
 
     print(result["answer"])
 
-    for item in result["retrieved_evidence"]:
+    print("\nSupporting evidence:")
+
+    for item in result["supporting_evidence"]:
         print(
             f"Rank {item['rank']} | "
             f"{item['document']} | "

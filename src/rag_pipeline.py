@@ -99,7 +99,7 @@ class RAGPipeline:
     def extract_supporting_evidence(self, answer, retrieved_results):
 
         citation_pattern = re.compile(
-            r"\[Document\s+([^,\]]+),\s*p\.\s*(\d+),\s*Chunk ID:\s*([^\]]+)\]"
+            r"\[(?:Document\s+)?([^,\]]+),\s*p\.\s*(\d+),\s*(?:Chunk ID:\s*)?([^\]]+)\]"
         )
 
         cited_sources = citation_pattern.findall(answer)

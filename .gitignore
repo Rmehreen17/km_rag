@@ -1,4 +1,27 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+
+# Environment / secrets
 .env
-.ipynb_checkpoints/
+.env.*
+!.env.example
+
+# Virtual environments
+venv/
+.venv/
+
+# Runtime files
+*.log
+
+# Local data
+data/raw/*
+data/processed/*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -4,3 +4,9 @@ scikit-learn
 rank-bm25
 numpy
 google-genai
+fastapi
+uvicorn[standard]
+python-multipart
+supabase
+pypdf
+openpyxl

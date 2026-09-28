@@ -1,117 +1,314 @@
-
-import json
 import re
-import numpy as np
 
 from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-from rank_bm25 import BM25Okapi
 
+from src.supabase_client import supabase
 from src.context_builder import build_context
 from src.answer_generator import generate_grounded_answer
 
 
-EMBEDDED_FILE = "data/processed/embedded_chunks.json"
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+
+DEFAULT_TOP_K = 5
+DEFAULT_CANDIDATE_K = 10
+DEFAULT_RRF_K = 60
 
 
 class RAGPipeline:
 
+    # ========================================================
+    # INITIALIZATION
+    # ========================================================
+
     def __init__(self):
-        with open(EMBEDDED_FILE, "r", encoding="utf-8") as f:
-            self.chunks = json.load(f)
 
-        self.embeddings = np.array([
-            chunk["embedding"]
-            for chunk in self.chunks
-        ])
+        print("Loading RAG embedding model...")
 
-        self.model = SentenceTransformer(EMBEDDING_MODEL)
+        self.model = SentenceTransformer(
+            EMBEDDING_MODEL
+        )
 
-        tokenized_chunks = [
-            chunk["text"].lower().split()
-            for chunk in self.chunks
-        ]
+        print("RAG pipeline ready.")
 
-        self.bm25 = BM25Okapi(tokenized_chunks)
+    # ========================================================
+    # SEMANTIC SEARCH
+    # ========================================================
 
-    def hybrid_search(self, query, top_k=5, candidate_k=10, rrf_k=60):
+    def semantic_search(
+        self,
+        query,
+        candidate_k=DEFAULT_CANDIDATE_K
+    ):
+        """
+        Semantic retrieval using Supabase pgvector.
+
+        The query is converted into an embedding and sent
+        to the match_document_chunks PostgreSQL RPC.
+        """
 
         query_embedding = self.model.encode(
-            [query],
+            query,
             normalize_embeddings=True
-        )
+        ).tolist()
 
-        semantic_scores = cosine_similarity(
-            query_embedding,
-            self.embeddings
-        )[0]
-
-        semantic_indices = (
-            semantic_scores.argsort()[-candidate_k:][::-1]
-        )
-
-        query_tokens = query.lower().split()
-
-        bm25_scores = self.bm25.get_scores(query_tokens)
-
-        bm25_indices = (
-            bm25_scores.argsort()[-candidate_k:][::-1]
-        )
-
-        fused_scores = {}
-
-        for rank, index in enumerate(semantic_indices, start=1):
-            fused_scores[index] = (
-                fused_scores.get(index, 0)
-                + 1 / (rrf_k + rank)
-            )
-
-        for rank, index in enumerate(bm25_indices, start=1):
-            fused_scores[index] = (
-                fused_scores.get(index, 0)
-                + 1 / (rrf_k + rank)
-            )
-
-        hybrid_indices = sorted(
-            fused_scores,
-            key=fused_scores.get,
-            reverse=True
-        )[:top_k]
+        response = supabase.rpc(
+            "match_document_chunks",
+            {
+                "query_embedding": query_embedding,
+                "match_count": candidate_k
+            }
+        ).execute()
 
         results = []
 
-        for rank, index in enumerate(hybrid_indices, start=1):
-
-            chunk = self.chunks[index]
+        for item in response.data:
 
             results.append({
-                "rank": rank,
-                "document": chunk["document_id"],
-                "page": chunk["page"],
-                "chunk_id": chunk["chunk_id"],
-                "score": float(fused_scores[index]),
-                "text": chunk["text"]
+                "document_id": item["document_id"],
+                "chunk_id": item["chunk_id"],
+                "page": item["page"],
+                "chunk_number": item["chunk_number"],
+                "content": item["content"],
+                "similarity": float(
+                    item["similarity"]
+                )
             })
 
         return results
 
-    def extract_supporting_evidence(self, answer, retrieved_results):
+    # ========================================================
+    # KEYWORD SEARCH
+    # ========================================================
 
-        citation_pattern = re.compile(
-            r"\[(?:Document\s+)?([^,\]]+),\s*p\.\s*(\d+),\s*(?:Chunk ID:\s*)?([^\]]+)\]"
+    def keyword_search(
+        self,
+        query,
+        candidate_k=DEFAULT_CANDIDATE_K
+    ):
+        """
+        Keyword retrieval using PostgreSQL full-text search.
+
+        IMPORTANT:
+        This uses the search_document_chunks RPC created
+        in Supabase.
+
+        It does NOT use Supabase .text_search(), because
+        that previously caused tsquery parsing errors.
+        """
+
+        response = supabase.rpc(
+            "search_document_chunks",
+            {
+                "search_query": query,
+                "match_count": candidate_k
+            }
+        ).execute()
+
+        results = []
+
+        for item in response.data:
+
+            results.append({
+                "document_id": item["document_id"],
+                "chunk_id": item["chunk_id"],
+                "page": item["page"],
+                "chunk_number": item["chunk_number"],
+                "content": item["content"]
+            })
+
+        return results
+
+    # ========================================================
+    # RECIPROCAL RANK FUSION
+    # ========================================================
+
+    def reciprocal_rank_fusion(
+        self,
+        semantic_results,
+        keyword_results,
+        top_k=DEFAULT_TOP_K,
+        rrf_k=DEFAULT_RRF_K
+    ):
+        """
+        Combines semantic and keyword retrieval using
+        Reciprocal Rank Fusion (RRF).
+
+        RRF score:
+
+            1 / (k + rank)
+        """
+
+        fused_scores = {}
+
+        result_lookup = {}
+
+        # ----------------------------------------------------
+        # Add semantic results
+        # ----------------------------------------------------
+
+        for rank, result in enumerate(
+            semantic_results,
+            start=1
+        ):
+
+            key = (
+                result["document_id"],
+                result["chunk_id"]
+            )
+
+            fused_scores[key] = (
+                fused_scores.get(key, 0.0)
+                + 1.0 / (rrf_k + rank)
+            )
+
+            result_lookup[key] = result
+
+        # ----------------------------------------------------
+        # Add keyword results
+        # ----------------------------------------------------
+
+        for rank, result in enumerate(
+            keyword_results,
+            start=1
+        ):
+
+            key = (
+                result["document_id"],
+                result["chunk_id"]
+            )
+
+            fused_scores[key] = (
+                fused_scores.get(key, 0.0)
+                + 1.0 / (rrf_k + rank)
+            )
+
+            # If this chunk only came from keyword search,
+            # preserve that result.
+            if key not in result_lookup:
+
+                result_lookup[key] = result
+
+        # ----------------------------------------------------
+        # Rank fused results
+        # ----------------------------------------------------
+
+        ranked_keys = sorted(
+            fused_scores.keys(),
+            key=lambda key: fused_scores[key],
+            reverse=True
         )
 
-        cited_sources = citation_pattern.findall(answer)
+        ranked_keys = ranked_keys[:top_k]
 
-        cited_keys = {
-            (
-                document.strip(),
-                int(page),
-                chunk_id.strip()
+        results = []
+
+        for rank, key in enumerate(
+            ranked_keys,
+            start=1
+        ):
+
+            result = result_lookup[key]
+
+            results.append({
+                "rank": rank,
+                "document": result["document_id"],
+                "page": result["page"],
+                "chunk_id": result["chunk_id"],
+                "chunk_number": result["chunk_number"],
+                "score": float(
+                    fused_scores[key]
+                ),
+                "text": result["content"]
+            })
+
+        return results
+
+    # ========================================================
+    # HYBRID SEARCH
+    # ========================================================
+
+    def hybrid_search(
+        self,
+        query,
+        top_k=DEFAULT_TOP_K,
+        candidate_k=DEFAULT_CANDIDATE_K,
+        rrf_k=DEFAULT_RRF_K
+    ):
+        """
+        Hybrid retrieval:
+
+            Semantic search
+                    +
+            Keyword search
+                    ↓
+                  RRF
+                    ↓
+                 Top K
+        """
+
+        semantic_results = self.semantic_search(
+            query,
+            candidate_k=candidate_k
+        )
+
+        keyword_results = self.keyword_search(
+            query,
+            candidate_k=candidate_k
+        )
+
+        return self.reciprocal_rank_fusion(
+            semantic_results=semantic_results,
+            keyword_results=keyword_results,
+            top_k=top_k,
+            rrf_k=rrf_k
+        )
+
+    # ========================================================
+    # SUPPORTING EVIDENCE
+    # ========================================================
+
+    def extract_supporting_evidence(
+        self,
+        answer,
+        retrieved_results
+    ):
+        """
+        Attempts to match citations generated by the LLM
+        against the retrieved chunks.
+        """
+
+        citation_pattern = re.compile(
+            r"\[(?:Document\s+)?"
+            r"([^,\]]+),\s*"
+            r"p\.\s*(\d+),\s*"
+            r"(?:Chunk ID:\s*)?"
+            r"([^\]]+)\]"
+        )
+
+        cited_sources = citation_pattern.findall(
+            answer
+        )
+
+        cited_keys = set()
+
+        for document, page, chunk_id in cited_sources:
+
+            try:
+                page_value = int(page)
+            except ValueError:
+                page_value = page
+
+            cited_keys.add(
+                (
+                    document.strip(),
+                    page_value,
+                    chunk_id.strip()
+                )
             )
-            for document, page, chunk_id in cited_sources
-        }
 
         supporting_evidence = []
 
@@ -119,45 +316,97 @@ class RAGPipeline:
 
             result_key = (
                 result["document"],
-                int(result["page"]),
+                result["page"],
                 result["chunk_id"]
             )
 
             if result_key in cited_keys:
-                supporting_evidence.append(result)
+
+                supporting_evidence.append(
+                    result
+                )
 
         return supporting_evidence
 
-    def ask(self, question, top_k=5):
+    # ========================================================
+    # ASK
+    # ========================================================
+
+    def ask(
+        self,
+        question,
+        top_k=DEFAULT_TOP_K
+    ):
+        """
+        Complete RAG pipeline:
+
+            Question
+                ↓
+            Hybrid retrieval
+                ↓
+            RRF
+                ↓
+            Context builder
+                ↓
+            Gemini
+                ↓
+            Grounded answer
+        """
+
+        # ----------------------------------------------------
+        # Retrieve evidence
+        # ----------------------------------------------------
 
         results = self.hybrid_search(
-            question,
+            query=question,
             top_k=top_k
         )
 
+        # ----------------------------------------------------
+        # Build context
+        # ----------------------------------------------------
+
         context = build_context(
             results,
-            self.chunks,
             max_chunks=top_k
         )
+
+        # ----------------------------------------------------
+        # Generate answer
+        # ----------------------------------------------------
 
         answer = generate_grounded_answer(
             question,
             context
         )
 
+        # ----------------------------------------------------
+        # Detect abstention
+        # ----------------------------------------------------
+
         abstained = (
-            "I don't have enough evidence in the provided corpus to answer this."
+            "I don't have enough evidence in the provided corpus"
             in answer
         )
+
+        # ----------------------------------------------------
+        # Supporting evidence
+        # ----------------------------------------------------
 
         supporting_evidence = []
 
         if not abstained:
-            supporting_evidence = self.extract_supporting_evidence(
-                answer,
-                results
+
+            supporting_evidence = (
+                self.extract_supporting_evidence(
+                    answer,
+                    results
+                )
             )
+
+        # ----------------------------------------------------
+        # Return result
+        # ----------------------------------------------------
 
         return {
             "question": question,
@@ -168,22 +417,65 @@ class RAGPipeline:
         }
 
 
+# ============================================================
+# MANUAL TEST
+# ============================================================
+
 if __name__ == "__main__":
 
     pipeline = RAGPipeline()
 
-    question = "How does Microsoft approach responsible AI?"
+    question = (
+        "How does the electronic messaging "
+        "compliance toolkit help federal agencies?"
+    )
 
-    result = pipeline.ask(question)
+    result = pipeline.ask(
+        question
+    )
 
-    print(result["answer"])
+    print("\n")
+    print("=" * 70)
+    print("ANSWER")
+    print("=" * 70)
 
-    print("\nSupporting evidence:")
+    print(
+        result["answer"]
+    )
 
-    for item in result["supporting_evidence"]:
+    print("\n")
+    print("=" * 70)
+    print("RETRIEVED EVIDENCE")
+    print("=" * 70)
+
+    for item in result["retrieved_evidence"]:
+
+        print("\n")
+        print(f"Rank: {item['rank']}")
+        print(f"Document: {item['document']}")
+        print(f"Page: {item['page']}")
+        print(f"Chunk: {item['chunk_id']}")
+        print(f"RRF Score: {item['score']}")
+
         print(
-            f"Rank {item['rank']} | "
-            f"{item['document']} | "
-            f"Page {item['page']} | "
-            f"{item['chunk_id']}"
+            f"Text: {item['text'][:700]}"
         )
+
+    print("\n")
+    print("=" * 70)
+    print("STATUS")
+    print("=" * 70)
+
+    print(
+        f"Abstained: {result['abstained']}"
+    )
+
+    print(
+        f"Retrieved chunks: "
+        f"{len(result['retrieved_evidence'])}"
+    )
+
+    print(
+        f"Supporting evidence: "
+        f"{len(result['supporting_evidence'])}"
+    )

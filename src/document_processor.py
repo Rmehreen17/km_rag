@@ -3,6 +3,7 @@ from io import BytesIO
 
 from pypdf import PdfReader
 from openpyxl import load_workbook
+from docx import Document
 
 # This is your PDF/TXT/Excel extraction layer.
 
@@ -43,6 +44,53 @@ def extract_txt_text(file_bytes):
     return [{
         "page": 1,
         "text": text
+    }]
+
+def extract_docx_text(file_bytes):
+    """
+    Extract text from a DOCX file.
+
+    Paragraphs are combined into a single logical page
+    because DOCX does not have a reliable page structure
+    at this extraction layer.
+    """
+
+    document = Document(
+        BytesIO(file_bytes)
+    )
+
+    paragraphs = []
+
+    for paragraph in document.paragraphs:
+
+        text = paragraph.text.strip()
+
+        if text:
+            paragraphs.append(text)
+
+    # Also extract text from tables
+    for table in document.tables:
+
+        for row in table.rows:
+
+            values = []
+
+            for cell in row.cells:
+
+                text = cell.text.strip()
+
+                if text:
+                    values.append(text)
+
+            if values:
+
+                paragraphs.append(
+                    " | ".join(values)
+                )
+
+    return [{
+        "page": 1,
+        "text": "\n".join(paragraphs)
     }]
 
 
@@ -98,13 +146,16 @@ def validate_file_size(file_bytes):
 
     size = len(file_bytes)
 
-    if size > MAX_FILE_SIZE:
-
+    if size == 0:
         raise ValueError(
-            "File exceeds the maximum allowed size "
-            f"of {MAX_FILE_SIZE // (1024 * 1024)} MB."
+            "The uploaded file is empty."
         )
 
+    if size > MAX_FILE_SIZE:
+        raise ValueError(
+            "File exceeds the maximum allowed size "
+            "of 3 MB."
+        )   
 
 def extract_document(file_bytes, filename):
 
@@ -120,12 +171,15 @@ def extract_document(file_bytes, filename):
     if extension == ".txt":
         return extract_txt_text(file_bytes)
 
+    if extension == ".docx":
+        return extract_docx_text(file_bytes)
+
     if extension in [".xlsx", ".xlsm"]:
         return extract_excel_text(file_bytes)
 
     raise ValueError(
         "Unsupported file type. "
-        "Please upload PDF, TXT, XLSX, or XLSM."
+        "Please upload PDF, DOCX, XLSX, or TXT."
     )
 
 

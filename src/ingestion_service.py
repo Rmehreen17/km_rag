@@ -16,25 +16,94 @@ from src.supabase_client import (
 )
 
 
+# --------------------------------------------------
+# Upload rules
+# --------------------------------------------------
+
+MAX_FILE_SIZE = 3 * 1024 * 1024  # 3 MB
+
+ALLOWED_EXTENSIONS = {
+    ".pdf",
+    ".docx",
+    ".xlsx",
+    ".txt"
+}
+
+
+# --------------------------------------------------
+# Main ingestion function
+# --------------------------------------------------
+
 def ingest_document(
     file_bytes,
     filename
 ):
     """
-    Complete ingestion flow.
+    Complete document ingestion flow.
 
-    1. Validate and extract document
-    2. Generate metadata
-    3. Store original file in Supabase Storage
-    4. Create document record in PostgreSQL
-    5. Return document information
+    Flow:
 
-    The document remains Pending Approval until
-    the Approve & Route workflow changes its status.
+    1. Validate file type
+    2. Validate file size
+    3. Extract document content
+    4. Generate AI metadata
+    5. Store original file in Supabase Storage
+    6. Create document record in PostgreSQL
+    7. Leave document in Pending Approval state
+
+    The document is NOT chunked, embedded, or indexed
+    until it passes the human approval/routing workflow.
     """
 
     # --------------------------------------------------
-    # 1. Extract document
+    # 0. Validate filename
+    # --------------------------------------------------
+
+    if not filename:
+
+        raise ValueError(
+            "A filename is required."
+        )
+
+    extension = Path(
+        filename
+    ).suffix.lower()
+
+    # --------------------------------------------------
+    # 1. Validate file type
+    # --------------------------------------------------
+
+    if extension not in ALLOWED_EXTENSIONS:
+
+        allowed = ", ".join(
+            sorted(ALLOWED_EXTENSIONS)
+        )
+
+        raise ValueError(
+            f"Unsupported file type '{extension}'. "
+            f"Supported formats: {allowed}"
+        )
+
+    # --------------------------------------------------
+    # 2. Validate file size
+    # --------------------------------------------------
+
+    file_size = len(file_bytes)
+
+    if file_size == 0:
+
+        raise ValueError(
+            "The uploaded file is empty."
+        )
+
+    if file_size > MAX_FILE_SIZE:
+
+        raise ValueError(
+            "File size exceeds the 3 MB limit."
+        )
+
+    # --------------------------------------------------
+    # 3. Extract document
     # --------------------------------------------------
 
     pages = extract_document(
@@ -61,7 +130,7 @@ def ingest_document(
         )
 
     # --------------------------------------------------
-    # 2. Generate metadata
+    # 4. Generate metadata
     # --------------------------------------------------
 
     metadata = extract_metadata(
@@ -70,16 +139,12 @@ def ingest_document(
     )
 
     # --------------------------------------------------
-    # 3. Create document ID
+    # 5. Create document ID
     # --------------------------------------------------
 
     document_id = str(
         uuid4()
     )
-
-    extension = Path(
-        filename
-    ).suffix.lower()
 
     storage_path = (
         f"documents/{document_id}"
@@ -87,7 +152,7 @@ def ingest_document(
     )
 
     # --------------------------------------------------
-    # 4. Store original document
+    # 6. Store original document
     # --------------------------------------------------
 
     supabase.storage.from_(
@@ -98,18 +163,23 @@ def ingest_document(
         {
             "content-type":
                 get_content_type(extension),
-            "upsert": "false"
+
+            "upsert":
+                "false"
         }
     )
 
     # --------------------------------------------------
-    # 5. Create database record
+    # 7. Create database record
     # --------------------------------------------------
 
     record = {
-        "id": document_id,
 
-        "filename": filename,
+        "id":
+            document_id,
+
+        "filename":
+            filename,
 
         "title":
             metadata.get(
@@ -146,7 +216,7 @@ def ingest_document(
             storage_path,
 
         "file_size_bytes":
-            len(file_bytes)
+            file_size
     }
 
     response = (
@@ -156,6 +226,10 @@ def ingest_document(
         .execute()
     )
 
+    # --------------------------------------------------
+    # 8. Verify database record
+    # --------------------------------------------------
+
     if not response.data:
 
         raise RuntimeError(
@@ -163,15 +237,38 @@ def ingest_document(
             "but the database record could not be created."
         )
 
+    # --------------------------------------------------
+    # 9. Return ingestion result
+    # --------------------------------------------------
+
     return {
-        "success": True,
-        "document_id": document_id,
-        "filename": filename,
-        "status": "Pending Approval",
-        "metadata": metadata,
-        "storage_path": storage_path
+
+        "success":
+            True,
+
+        "document_id":
+            document_id,
+
+        "filename":
+            filename,
+
+        "status":
+            "Pending Approval",
+
+        "metadata":
+            metadata,
+
+        "storage_path":
+            storage_path,
+
+        "file_size_bytes":
+            file_size
     }
 
+
+# --------------------------------------------------
+# Content type helper
+# --------------------------------------------------
 
 def get_content_type(extension):
 
@@ -180,14 +277,14 @@ def get_content_type(extension):
         ".pdf":
             "application/pdf",
 
+        ".docx":
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+
         ".txt":
             "text/plain",
 
         ".xlsx":
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-
-        ".xlsm":
-            "application/vnd.ms-excel.sheet.macroEnabled.12"
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     }
 
     return content_types.get(

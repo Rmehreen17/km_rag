@@ -10,3 +10,4 @@ python-multipart
 supabase
 pypdf
 openpyxl
+python-docx

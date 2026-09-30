@@ -1,13 +1,20 @@
-from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import (
+    FastAPI,
+    HTTPException,
+    UploadFile,
+    File,
+    Query,
+)
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from src.rag_pipeline import RAGPipeline
-from src.ingestion_service import ingest_document
-from src.indexing_service import index_document
+
+from src.ingestion_service import (
+    ingest_document,
+)
 
 from src.repository_service import (
     get_documents,
@@ -16,6 +23,10 @@ from src.repository_service import (
     route_document,
     approve_and_route,
     get_repository_stats,
+)
+
+from src.indexing_service import (
+    index_document,
 )
 
 
@@ -37,7 +48,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -47,29 +58,20 @@ app.add_middleware(
 # RAG PIPELINE
 # ============================================================
 
+print("Initializing RAG pipeline...")
+
 pipeline = RAGPipeline()
 
-
-# ============================================================
-# INGESTION CONFIGURATION
-# ============================================================
-
-MAX_FILE_SIZE = 3 * 1024 * 1024  # 3 MB
-
-# These must match the current document_processor.py
-ALLOWED_EXTENSIONS = {
-    ".pdf",
-    ".txt",
-    ".xlsx",
-    ".xlsm",
-}
+print("RAG pipeline ready.")
 
 
 # ============================================================
 # REQUEST MODELS
 # ============================================================
 
+
 class QueryRequest(BaseModel):
+
     question: str = Field(
         ...,
         min_length=3,
@@ -83,21 +85,28 @@ class QueryRequest(BaseModel):
         default=5,
         ge=1,
         le=20,
-        description="Number of evidence chunks to retrieve.",
+        description=(
+            "Number of evidence chunks to retrieve."
+        ),
     )
 
 
 class RouteRequest(BaseModel):
+
     routed_to: str = Field(
         ...,
         min_length=1,
-        description="Repository destination for the document.",
+        description=(
+            "Repository destination such as "
+            "Finance, HR, Legal, Engineering or Compliance."
+        ),
     )
 
 
 # ============================================================
 # RESPONSE HELPERS
 # ============================================================
+
 
 def format_source(
     item: dict[str, Any]
@@ -121,11 +130,9 @@ def format_source(
 # HEALTH
 # ============================================================
 
+
 @app.get("/health")
 def health():
-    """
-    Basic API health check.
-    """
 
     return {
         "status": "ok",
@@ -135,11 +142,29 @@ def health():
 
 
 # ============================================================
-# QUERY
+# ROOT
 # ============================================================
 
+
+@app.get("/")
+def root():
+
+    return {
+        "service": "enterprise-knowledge-search",
+        "status": "running",
+        "docs": "/docs",
+    }
+
+
+# ============================================================
+# RAG QUERY
+# ============================================================
+
+
 @app.post("/query")
-def query(request: QueryRequest):
+def query(
+    request: QueryRequest
+):
     """
     Ask a question against the enterprise
     knowledge repository.
@@ -159,7 +184,9 @@ def query(request: QueryRequest):
             "abstained": result["abstained"],
             "sources": [
                 format_source(item)
-                for item in result["retrieved_evidence"]
+                for item in result[
+                    "retrieved_evidence"
+                ]
             ],
         }
 
@@ -172,188 +199,117 @@ def query(request: QueryRequest):
 
 
 # ============================================================
-# DOCUMENT INGESTION
+# INGEST DOCUMENT
 # ============================================================
+
 
 @app.post("/ingest")
 async def ingest(
     file: UploadFile = File(...)
 ):
     """
-    Upload and ingest a document.
+    Upload a document into the ingestion pipeline.
 
     Supported formats:
-
         PDF
         TXT
         XLSX
         XLSM
 
     Maximum file size:
-
         3 MB
 
     Flow:
 
         Upload
-            ↓
-        Validate
-            ↓
-        Extract text
-            ↓
+          ↓
+        Extract
+          ↓
         Generate metadata
-            ↓
-        Store original document
-            ↓
-        Create repository record
-            ↓
+          ↓
+        Store document
+          ↓
         Pending Approval
     """
 
-    # --------------------------------------------------------
-    # 1. Validate filename
-    # --------------------------------------------------------
-
-    filename = file.filename or ""
-
-    if not filename:
-
-        raise HTTPException(
-            status_code=400,
-            detail="A filename is required.",
-        )
-
-    # --------------------------------------------------------
-    # 2. Validate extension
-    # --------------------------------------------------------
-
-    extension = Path(
-        filename
-    ).suffix.lower()
-
-    if extension not in ALLOWED_EXTENSIONS:
-
-        raise HTTPException(
-            status_code=400,
-            detail=(
-                "Unsupported file type. "
-                "Supported formats: "
-                "PDF, TXT, XLSX, XLSM."
-            ),
-        )
-
-    # --------------------------------------------------------
-    # 3. Read uploaded file
-    # --------------------------------------------------------
-
     try:
+
+        # ----------------------------------------------------
+        # Validate filename
+        # ----------------------------------------------------
+
+        if not file.filename:
+
+            raise HTTPException(
+                status_code=400,
+                detail="Filename is required.",
+            )
+
+        filename = file.filename
+
+        # ----------------------------------------------------
+        # Validate extension
+        # ----------------------------------------------------
+
+        allowed_extensions = {
+            ".pdf",
+            ".txt",
+            ".xlsx",
+            ".xlsm",
+        }
+
+        from pathlib import Path
+
+        extension = (
+            Path(filename)
+            .suffix
+            .lower()
+        )
+
+        if extension not in allowed_extensions:
+
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    "Unsupported file type. "
+                    "Please upload PDF, TXT, XLSX, or XLSM."
+                ),
+            )
+
+        # ----------------------------------------------------
+        # Read file
+        # ----------------------------------------------------
 
         file_bytes = await file.read()
 
-    except Exception as exc:
+        if not file_bytes:
 
-        raise HTTPException(
-            status_code=400,
-            detail=(
-                "Unable to read uploaded file: "
-                f"{str(exc)}"
-            ),
-        )
+            raise HTTPException(
+                status_code=400,
+                detail="Uploaded file is empty.",
+            )
 
-    # --------------------------------------------------------
-    # 4. Validate empty file
-    # --------------------------------------------------------
-
-    if len(file_bytes) == 0:
-
-        raise HTTPException(
-            status_code=400,
-            detail="The uploaded file is empty.",
-        )
-
-    # --------------------------------------------------------
-    # 5. Validate file size
-    # --------------------------------------------------------
-
-    if len(file_bytes) > MAX_FILE_SIZE:
-
-        raise HTTPException(
-            status_code=413,
-            detail=(
-                "File exceeds the maximum allowed "
-                "size of 3 MB."
-            ),
-        )
-
-    # --------------------------------------------------------
-    # 6. Run ingestion service
-    # --------------------------------------------------------
-
-    try:
+        # ----------------------------------------------------
+        # Ingest
+        # ----------------------------------------------------
 
         result = ingest_document(
             file_bytes=file_bytes,
             filename=filename,
         )
 
-        return result
-
-    except ValueError as exc:
-
-        raise HTTPException(
-            status_code=400,
-            detail=str(exc),
-        )
-
-    except Exception as exc:
-
-        raise HTTPException(
-            status_code=500,
-            detail=str(exc),
-        )
-
-
-# ============================================================
-# DOCUMENT INDEXING
-# ============================================================
-
-@app.post("/documents/{document_id}/index")
-def index(
-    document_id: str,
-):
-    """
-    Index an approved or routed document
-    into the RAG knowledge repository.
-
-    Flow:
-
-        Approved / Routed
-              ↓
-        Download document
-              ↓
-        Extract content
-              ↓
-        Create chunks
-              ↓
-        Generate embeddings
-              ↓
-        Store chunks
-              ↓
-        Update indexing status
-    """
-
-    try:
-
-        result = index_document(
-            document_id
-        )
-
         return {
             "success": True,
-            "message": "Document indexed successfully.",
+            "message": (
+                "Document uploaded successfully "
+                "and is pending approval."
+            ),
             "result": result,
         }
 
+    except HTTPException:
+        raise
+
     except ValueError as exc:
 
         raise HTTPException(
@@ -370,14 +326,25 @@ def index(
 
 
 # ============================================================
-# REPOSITORY - LIST DOCUMENTS
+# LIST DOCUMENTS
 # ============================================================
+
 
 @app.get("/documents")
 def list_documents(
-    status: str | None = None,
-    department: str | None = None,
-    limit: int = 100,
+    status: Optional[str] = Query(
+        default=None,
+        description="Filter by document status.",
+    ),
+    department: Optional[str] = Query(
+        default=None,
+        description="Filter by department.",
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=1000,
+    ),
 ):
     """
     Retrieve documents from the repository.
@@ -386,7 +353,6 @@ def list_documents(
 
         status
         department
-        limit
     """
 
     try:
@@ -412,15 +378,16 @@ def list_documents(
 
 
 # ============================================================
-# REPOSITORY - GET DOCUMENT
+# GET SINGLE DOCUMENT
 # ============================================================
 
+
 @app.get("/documents/{document_id}")
-def get_document_by_id(
-    document_id: str,
+def get_single_document(
+    document_id: str
 ):
     """
-    Retrieve a single document from the repository.
+    Retrieve a single document.
     """
 
     try:
@@ -433,7 +400,10 @@ def get_document_by_id(
 
             raise HTTPException(
                 status_code=404,
-                detail="Document not found.",
+                detail=(
+                    f"Document not found: "
+                    f"{document_id}"
+                ),
             )
 
         return {
@@ -442,7 +412,6 @@ def get_document_by_id(
         }
 
     except HTTPException:
-
         raise
 
     except Exception as exc:
@@ -454,21 +423,20 @@ def get_document_by_id(
 
 
 # ============================================================
-# REPOSITORY - APPROVE
+# APPROVE DOCUMENT
 # ============================================================
+
 
 @app.post("/documents/{document_id}/approve")
 def approve(
-    document_id: str,
+    document_id: str
 ):
     """
     Approve a document after human review.
 
-    Lifecycle:
-
-        Pending Approval
-              ↓
-           Approved
+    Pending Approval
+            ↓
+         Approved
     """
 
     try:
@@ -499,8 +467,9 @@ def approve(
 
 
 # ============================================================
-# REPOSITORY - ROUTE
+# ROUTE DOCUMENT
 # ============================================================
+
 
 @app.post("/documents/{document_id}/route")
 def route(
@@ -508,13 +477,8 @@ def route(
     request: RouteRequest,
 ):
     """
-    Route an approved document.
-
-    Lifecycle:
-
-        Approved
-            ↓
-         Routed
+    Route an approved document
+    to a repository destination.
     """
 
     try:
@@ -546,8 +510,9 @@ def route(
 
 
 # ============================================================
-# REPOSITORY - APPROVE + ROUTE
+# APPROVE + ROUTE
 # ============================================================
+
 
 @app.post(
     "/documents/{document_id}/approve-and-route"
@@ -557,9 +522,7 @@ def approve_and_route_document(
     request: RouteRequest,
 ):
     """
-    Approve and route a document.
-
-    Lifecycle:
+    Perform:
 
         Pending Approval
               ↓
@@ -599,8 +562,65 @@ def approve_and_route_document(
 
 
 # ============================================================
-# REPOSITORY - STATISTICS
+# INDEX DOCUMENT
 # ============================================================
+
+
+@app.post("/documents/{document_id}/index")
+def index(
+    document_id: str
+):
+    """
+    Index an approved/routed document.
+
+    Flow:
+
+        Repository document
+                ↓
+        Download original file
+                ↓
+        Extract content
+                ↓
+        Create chunks
+                ↓
+        Generate embeddings
+                ↓
+        Store chunks + embeddings
+                ↓
+        Mark indexed
+    """
+
+    try:
+
+        result = index_document(
+            document_id
+        )
+
+        return {
+            "success": True,
+            "message": "Document indexed successfully.",
+            "result": result,
+        }
+
+    except ValueError as exc:
+
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        )
+
+    except Exception as exc:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(exc),
+        )
+
+
+# ============================================================
+# REPOSITORY STATISTICS
+# ============================================================
+
 
 @app.get("/repository/stats")
 def repository_stats():
@@ -623,17 +643,3 @@ def repository_stats():
             status_code=500,
             detail=str(exc),
         )
-
-
-# ============================================================
-# ROOT
-# ============================================================
-
-@app.get("/")
-def root():
-
-    return {
-        "service": "enterprise-knowledge-search",
-        "status": "running",
-        "docs": "/docs",
-    }

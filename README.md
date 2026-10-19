@@ -1,6 +1,6 @@
 # Enterprise Knowledge Search (EKS)
 
-> **An evidence-first RAG application for searching and answering questions across heterogeneous enterprise documents.**
+> **An evidence based RAG application for searching and answering questions across heterogeneous enterprise documents.**
 
 EKS is an experimental Retrieval-Augmented Generation (RAG) application designed to help users find answers across enterprise documents while keeping the underlying evidence visible and traceable.
 

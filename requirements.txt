@@ -11,3 +11,4 @@ supabase
 pypdf
 openpyxl
 python-docx
+openai

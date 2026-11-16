@@ -1,35 +1,31 @@
 
 import os
+import logging
+
 from google import genai
+from openai import OpenAI
+
+logger = logging.getLogger(__name__)
+
+GEMINI_MODEL_NAME = "gemini-flash-lite-latest"
+
+OPENROUTER_MODEL_NAME = os.environ.get(
+    "OPENROUTER_MODEL_NAME",
+    "openrouter/free"
+)
+
+OPENAI_MODEL_NAME = os.environ.get(
+    "OPENAI_MODEL_NAME",
+    "gpt-4o-mini"
+)
 
 
-MODEL_NAME = "gemini-flash-lite-latest"
-
-
-def create_client():
+def build_prompt(question, context):
     """
-    Create a Gemini client using the GEMINI_API_KEY
-    environment variable.
-    """
-
-    api_key = os.environ.get("GEMINI_API_KEY")
-
-    if not api_key:
-        raise ValueError(
-            "GEMINI_API_KEY environment variable is not set."
-        )
-
-    return genai.Client(api_key=api_key)
-
-
-def generate_grounded_answer(question, context):
-    """
-    Generate an answer using only the retrieved evidence.
+    Build an evidence-first prompt with strict citation requirements.
     """
 
-    client = create_client()
-
-    prompt = f"""
+    return f"""
 You are an evidence-first enterprise knowledge assistant.
 
 Answer the user's question using ONLY the evidence provided below.
@@ -69,9 +65,165 @@ RETRIEVED EVIDENCE:
 Now provide the answer.
 """
 
+
+def generate_with_gemini(prompt):
+    """
+    Generate an answer using Gemini.
+    """
+
+    api_key = os.environ.get("GEMINI_API_KEY")
+
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY is not configured.")
+
+    client = genai.Client(api_key=api_key)
+
     response = client.models.generate_content(
-        model=MODEL_NAME,
+        model=GEMINI_MODEL_NAME,
         contents=prompt
     )
 
-    return response.text
+    answer = response.text
+
+    if not answer:
+        raise RuntimeError("Gemini returned an empty response.")
+
+    return answer
+
+
+def generate_with_openrouter(prompt):
+    """
+    Generate an answer using OpenRouter.
+    Defaults to OpenRouter's free model router.
+    """
+
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY is not configured.")
+
+    client = OpenAI(
+        api_key=api_key,
+        base_url="https://openrouter.ai/api/v1"
+    )
+
+    response = client.chat.completions.create(
+        model=OPENROUTER_MODEL_NAME,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        temperature=0.2
+    )
+
+    answer = response.choices[0].message.content
+
+    if not answer:
+        raise RuntimeError("OpenRouter returned an empty response.")
+
+    return answer
+
+
+def generate_with_openai(prompt):
+    """
+    Generate an answer using OpenAI.
+    Retained as the final fallback for future paid API usage.
+    """
+
+    api_key = os.environ.get("OPENAI_API_KEY")
+
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY is not configured.")
+
+    client = OpenAI(api_key=api_key)
+
+    response = client.chat.completions.create(
+        model=OPENAI_MODEL_NAME,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        temperature=0.2
+    )
+
+    answer = response.choices[0].message.content
+
+    if not answer:
+        raise RuntimeError("OpenAI returned an empty response.")
+
+    return answer
+
+
+def generate_grounded_answer(question, context):
+    """
+    Generate a grounded answer using:
+    1. Gemini (primary)
+    2. OpenRouter (free fallback)
+    3. OpenAI (final fallback)
+    """
+
+    prompt = build_prompt(question, context)
+
+    gemini_error_type = "Not attempted"
+    openrouter_error_type = "Not attempted"
+
+    # Primary provider: Gemini
+    try:
+        answer = generate_with_gemini(prompt)
+
+        logger.info("Answer generated successfully using Gemini.")
+
+        return answer
+
+    except Exception as error:
+        gemini_error_type = type(error).__name__
+
+        logger.warning(
+            "Gemini failed (%s). Trying OpenRouter.",
+            gemini_error_type
+        )
+
+    # Second provider: OpenRouter
+    try:
+        answer = generate_with_openrouter(prompt)
+
+        logger.info("Answer generated successfully using OpenRouter.")
+
+        return answer
+
+    except Exception as error:
+        openrouter_error_type = type(error).__name__
+
+        logger.warning(
+            "OpenRouter failed (%s). Trying OpenAI.",
+            openrouter_error_type
+        )
+
+    # Final provider: OpenAI
+    try:
+        answer = generate_with_openai(prompt)
+
+        logger.info("Answer generated successfully using OpenAI.")
+
+        return answer
+
+    except Exception as error:
+        openai_error_type = type(error).__name__
+
+        logger.error(
+            "All providers failed. Gemini: %s | OpenRouter: %s | OpenAI: %s",
+            gemini_error_type,
+            openrouter_error_type,
+            openai_error_type
+        )
+
+        raise RuntimeError(
+            "Answer generation failed with all providers. "
+            f"Gemini: {gemini_error_type}; "
+            f"OpenRouter: {openrouter_error_type}; "
+            f"OpenAI: {openai_error_type}"
+        ) from error
